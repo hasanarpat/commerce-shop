@@ -70,7 +70,7 @@
   * {
     @apply border-border;
   }
-  .container {
+  .layout {
     @apply bg-background text-foreground;
   }
 }
