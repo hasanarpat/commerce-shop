@@ -1,8 +1,6 @@
-import React from 'react';
-
 const Footer = () => {
   return (
-    <footer className='bg-accent-foreground text-zinc-50'>
+    <footer className='bg-accent-foreground text-gray-400'>
       <div className='p-4 md:p-12 flex flex-col items-center  justify-between gap-4 md:flex-row'>
         <div className='flex flex-col gap-4 w-full items-center md:items-baseline'>
           <h3 className='text-muted-foreground'>Services</h3>

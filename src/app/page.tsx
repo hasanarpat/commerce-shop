@@ -1,9 +1,44 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { useTheme } from '@/lib/ThemeContext';
-
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
-  return <div>Homepage</div>;
+  return (
+    <main>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+      <h1>Homepage</h1>
+    </main>
+  );
 }

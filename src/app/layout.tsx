@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Crow Metal Store',
+  title: 'HardStone',
   description: 'Everything about metal, clothes, accesories etc.',
 };
 
