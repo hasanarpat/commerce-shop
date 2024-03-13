@@ -23,8 +23,10 @@ export default function Home() {
       <section>
         {/* SLIDERS */}
         <Carousel
+          classNameContainer='p-3 lg:p-12 min-h-[220px]'
+          classNameCardContent=''
+          classNameCard='hover:bg-emerald-500 hover:-translate-y-2 ease-in-out duration-100'
           array={array2}
-          classNameContainer='p-3 lg:p-12'
           title='Jackets'
         />
       </section>

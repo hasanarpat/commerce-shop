@@ -50,7 +50,7 @@ const CarouselComponent = (props: {
             <CarouselItem
               key={index}
               className={cn(
-                'basis-full md:basis-1/2 lg:basis-1/4 xl:basis-1/6',
+                'basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/6',
                 props.classNameItem
               )}
             >

@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { CiShoppingCart } from 'react-icons/ci';
+import { CiHeart } from 'react-icons/ci';
+import { CgProfile } from 'react-icons/cg';
 import { GiMetalHand } from 'react-icons/gi';
 import Switch from './Switch';
 import Menu from './Menu';
@@ -22,9 +24,15 @@ const Navbar = () => {
         <div className='lg:flex hidden'>
           <Switch />
         </div>
-        <div className='text-4xl hidden lg:block'>
+        <div className='text-4xl hidden lg:flex items-center gap-2'>
+          <Link href='/favorites' className='text-red-500'>
+            <CiHeart />
+          </Link>
           <Link href='/cart'>
             <CiShoppingCart />
+          </Link>
+          <Link href='/profile'>
+            <CgProfile />
           </Link>
         </div>
         <MobileMenu />

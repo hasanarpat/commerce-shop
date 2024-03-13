@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CiLogin, CiShoppingCart } from 'react-icons/ci';
+import { CiHeart, CiLogin, CiShoppingCart } from 'react-icons/ci';
 import { CgProfile } from 'react-icons/cg';
 
 import {
@@ -63,10 +63,27 @@ const MobileMenu = () => {
             <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-lg text-center rounded-lg'>
               Search
             </li>
-            <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-4xl text-center rounded-lg'>
-              <Link href='/cart' className='flex items-center justify-center'>
+            <li className=' bg-secondary p-2 text-center rounded-lg flex flex-col items-center gap-2'>
+              <Link
+                className='w-full hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg text-xl flex items-center justify-center'
+                href='/favorites'
+              >
+                Favorites{' '}
+                <CiHeart className='text-red-500 hover:fill-red-500  text-4xl ml-2' />
+              </Link>
+              <Link
+                href='/cart'
+                className='w-full flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary'
+              >
                 <span className='text-lg'>Cart</span>
-                <CiShoppingCart />
+                <CiShoppingCart className=' text-4xl ml-2' />
+              </Link>
+              <Link
+                href='/profile'
+                className='w-full flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary'
+              >
+                <span className='text-lg'>Profile</span>
+                <CgProfile className=' text-4xl ml-2' />
               </Link>
             </li>
             <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-end mb-8 rounded-lg'>
