@@ -9,7 +9,7 @@ import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   return (
-    <nav className='p-8 bg-transparent backdrop-blur-sm h-16 border-b border-accent sticky top-0'>
+    <nav className='p-8 bg-transparent backdrop-blur-sm h-16 border-b border-accent sticky top-0 z-50'>
       <div className='flex items-center justify-between h-full text-lg md:text-base'>
         <Link className='text-5xl flex items-center justify-center' href='/'>
           <GiMetalHand />
