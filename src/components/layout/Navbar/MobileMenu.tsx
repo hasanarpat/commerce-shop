@@ -28,7 +28,7 @@ const MobileMenu = () => {
         <div className='w-full h-1 bg-gray-700' />
       </div>
       {openMenu && (
-        <div className='absolute z-50 w-[100svw] h-[calc(100svh-64px)] top-10 right-[-32px] bg-transparent backdrop-blur-lg'>
+        <div className='absolute z-50 w-[100svw] h-[calc(100svh-64px)] top-10 right-[-32px] bg-transparent backdrop-blur-2xl'>
           <ul
             className='p-12 h-full flex flex-col justify-between gap-y-4'
             onClick={() => setOpenMenu((prev) => false)}

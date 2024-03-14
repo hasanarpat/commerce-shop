@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/carousel';
 
 import { cn } from '@/lib/utils';
-import { TProduct } from '@/types';
+import { TCarouselSuggestion, TProduct } from '@/types';
 
 import { CiShoppingCart } from 'react-icons/ci';
 import { CiHeart } from 'react-icons/ci';
@@ -35,7 +35,8 @@ const CarouselComponent = (props: {
   classNameCardDescription?: String;
   classNameCardTitle?: String;
   classNameCardFooter?: String;
-  array: number[] | TProduct[];
+  classNameCardFlex?: String;
+  array: TCarouselSuggestion | TProduct[];
   title?: String;
   isProduct: boolean;
 }) => {
@@ -62,99 +63,70 @@ const CarouselComponent = (props: {
         )}
       >
         <CarouselContent className={cn('', props.classNameContent)}>
-          {props.isProduct
-            ? (props.array as TProduct[]).map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className={cn(
-                    'basis-full md:basis-1/2 lg:basis-1/4 xl:basis-1/5 2xl:basis-1/6',
-                    props.classNameItem
-                  )}
-                >
-                  <div className='p-1'>
-                    <Card className={cn('', props.classNameCard)}>
-                      <CardContent
-                        className={cn(
-                          'flex aspect-square items-center justify-center p-0',
-                          props.classNameCardContent
-                        )}
+          {props.isProduct &&
+            (props.array as TProduct[]).map((item, index) => (
+              <CarouselItem
+                key={index}
+                className={cn(
+                  'basis-full md:basis-1/2 lg:basis-1/4 xl:basis-1/5 2xl:basis-1/6',
+                  props.classNameItem
+                )}
+              >
+                <div className={cn('p-1', props.classNameCardFlex)}>
+                  <Card className={cn('', props.classNameCard)}>
+                    <CardContent
+                      className={cn(
+                        'flex aspect-square items-center justify-center p-0',
+                        props.classNameCardContent
+                      )}
+                    >
+                      <Link
+                        className='w-full h-full relative'
+                        href={`/products/${item.id}`}
                       >
-                        <Link
-                          className='w-full h-full relative'
-                          href={`/products/${item.id}`}
-                        >
+                        {item.image && (
                           <Image
                             alt='product'
                             src={item.image}
                             fill
                             className='object-cover'
                           />
-                        </Link>
-                      </CardContent>
-                      <CardHeader className={cn('', props.classNameCardHeader)}>
-                        <CardTitle className={cn('', props.classNameCardTitle)}>
-                          {item.title}
-                        </CardTitle>
-                        <CardDescription
-                          className={cn('', props.classNameCardDescription)}
-                        >
-                          {item.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardFooter className='p-0'>
-                        <div className='w-full flex flex-col items-center justify-between gap-4'>
-                          <div className='w-full flex items-center justify-between px-1'>
-                            <span className='w-full text-center'>
-                              {item.cost}
-                            </span>
-                            <span className='w-full text-center flex items-center'>
-                              <Link
-                                href={`/categories/${item.category}`}
-                                className='hover:text-emerald-200'
-                              >
-                                {item.category}
-                              </Link>
-                              <IoTicketOutline className='text-2xl' />
-                            </span>
-                          </div>
-                          <div className='w-full mb-2 gap-4 flex items-center justify-center text-3xl'>
-                            <span className='text-yellow-500 hover:stroke-yellow-500'>
-                              <CiShoppingCart />
-                            </span>
-                            <span className='text-red-500'>
-                              <CiHeart />
-                            </span>
-                          </div>
-                        </div>
-                      </CardFooter>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))
-            : Array.from({ length: props.array?.length }).map((_, index) => (
-                <CarouselItem
-                  key={index}
-                  className={cn(
-                    'basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/6',
-                    props.classNameItem
-                  )}
-                >
-                  <div className='p-1'>
-                    <Card className={cn('', props.classNameCard)}>
-                      <CardContent
-                        className={cn(
-                          'flex aspect-square items-center justify-center p-6',
-                          props.classNameCardContent
                         )}
+                      </Link>
+                    </CardContent>
+                    <CardHeader
+                      className={cn('p-2', props.classNameCardHeader)}
+                    >
+                      <CardTitle className={cn('', props.classNameCardTitle)}>
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription
+                        className={cn('', props.classNameCardDescription)}
                       >
-                        <span className='text-4xl font-semibold'>
-                          {index + 1}
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
+                        {item.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardFooter className='p-0'>
+                      <div className='w-full flex flex-col items-center justify-between gap-4'>
+                        <div className='w-full flex items-center justify-between px-4'>
+                          <span className='w-full text-start text-emerald-300'>
+                            {item.cost}
+                          </span>
+                        </div>
+                        <div className='w-full mb-2 gap-4 flex items-center justify-center text-3xl'>
+                          <span className='text-yellow-500 hover:stroke-yellow-500'>
+                            <CiShoppingCart />
+                          </span>
+                          <span className='text-red-500'>
+                            <CiHeart />
+                          </span>
+                        </div>
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
