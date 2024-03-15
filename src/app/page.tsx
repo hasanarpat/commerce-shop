@@ -28,10 +28,16 @@ export default function Home() {
         {/* SLIDERS */}
         <ProductCarousel array={array3} isProduct={true} title='Trend' />
 
-        <div className='w-full p-4 lg:px-24'>
-          <div className='mx-8 flex items-start justify-center gap-x-4'>
+        <div className='w-full p-2 md:p-4 lg:px-24 grid'>
+          <div
+            className='mx-8 flex flex-wrap items-start justify-center gap-x-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2
+          '
+          >
             {array2.map((item, index) => (
-              <Card key={index}>
+              <Card
+                key={index}
+                className='flex-grow min-h-[500px] flex flex-col justify-between'
+              >
                 <CardContent className='relative h-full min-h-48 w-full'>
                   <Image
                     src={item.image}
@@ -40,7 +46,7 @@ export default function Home() {
                     className='object-cover'
                   />
                 </CardContent>
-                <CardHeader>
+                <CardHeader className='flex flex-col justify-between flex-grow h-full'>
                   <CardTitle>{item.title}</CardTitle>
                   <CardDescription>{item.description}</CardDescription>
                   <Button>
