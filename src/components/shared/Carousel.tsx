@@ -72,8 +72,13 @@ const CarouselComponent = (props: {
                   props.classNameItem
                 )}
               >
-                <div className={cn('p-1', props.classNameCardFlex)}>
-                  <Card className={cn('', props.classNameCard)}>
+                <div className={cn('p-1 h-full', props.classNameCardFlex)}>
+                  <Card
+                    className={cn(
+                      'h-full flex-grow justify-between',
+                      props.classNameCard
+                    )}
+                  >
                     <CardContent
                       className={cn(
                         'flex aspect-square items-center justify-center p-0',
@@ -95,7 +100,7 @@ const CarouselComponent = (props: {
                       </Link>
                     </CardContent>
                     <CardHeader
-                      className={cn('p-2', props.classNameCardHeader)}
+                      className={cn('p-2 ', props.classNameCardHeader)}
                     >
                       <CardTitle className={cn('', props.classNameCardTitle)}>
                         {item.title}
