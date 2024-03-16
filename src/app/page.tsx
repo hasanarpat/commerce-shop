@@ -27,7 +27,7 @@ export default function Home() {
       <section className='p-4 lg:px-24'>
         {/* SLIDERS */}
         <ProductCarousel array={array3} isProduct={true} title='Trend' />
-
+        {/* OFFERS SECTION */}
         <div className='w-full p-2 md:p-4 lg:px-24 grid'>
           <div
             className='mx-8 flex flex-wrap items-start justify-center gap-x-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2

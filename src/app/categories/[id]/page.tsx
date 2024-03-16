@@ -42,7 +42,7 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
               className='object-cover'
             />
           </div>
-          <div className='relative flex-1 h-72 flex flex-col justify-between p-2 md:p-4 text-sm md:text-base box-content'>
+          <div className='flex-1 h-72 flex flex-col justify-between p-2 md:p-4 text-sm md:text-base box-content'>
             <h4 className='text-2xl text-sky-400'>
               Incididunt laborum et ad tempor eiusmod ipsum.
             </h4>
