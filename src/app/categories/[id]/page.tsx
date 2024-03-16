@@ -104,6 +104,9 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
         </div>
       </div>
 
+      <div className=''>
+        <Link href={`/categories/${id}/products`}>See All</Link>
+      </div>
       {products.filter((item) => item.category === id).length > 0 && (
         <>
           <h5 className='my-1 text-start text-3xl font-extrabold w-full'>
