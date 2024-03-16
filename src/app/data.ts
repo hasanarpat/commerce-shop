@@ -141,7 +141,8 @@ export const products = [
   {
     id: '1',
     title: 'Bileklik',
-    description: 'Şık ve sade bileklik',
+    description:
+      'Enim eiusmod ea sunt pariatur commodo velit consectetur cupidatat. Elit amet Lorem sint proident. Velit id officia excepteur non id fugiat. Enim adipisicing dolor irure ut velit voluptate. Eiusmod eiusmod laboris dolor excepteur. In labore exercitation adipisicing ullamco adipisicing duis dolor occaecat nisi exercitation officia elit in. Ipsum eiusmod nulla adipisicing qui.',
     images: [
       'https://images.pexels.com/photos/553236/pexels-photo-553236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       'https://images.pexels.com/photos/633661/pexels-photo-633661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
