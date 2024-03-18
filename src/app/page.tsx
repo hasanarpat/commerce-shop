@@ -19,7 +19,7 @@ export default function Home() {
       <section className='p-4 lg:p-12'>
         {/* HERO SECTION */}
         <h1 className=' bg-emerald-500 text-foreground text-3xl text-center p-1'>
-          HardStone, metal müziğe gönül veren Neşet ertaş hayranı metalheadlere
+          HardStone, metal müziğe gönül veren Neşet Ertaş hayranı metalheadlere
           gelsin!
         </h1>
         <SuggestionCarousel isProduct={false} array={array1} />
