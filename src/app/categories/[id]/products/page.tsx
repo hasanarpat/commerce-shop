@@ -33,6 +33,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
+import GridCards from '@/components/shared/GridCards';
 
 const CategoryProducts = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -138,48 +139,7 @@ const CategoryProducts = ({ params }: { params: { id: string } }) => {
           </div>
         </aside>
         <div className=' flex-shrink w-full p-2 bg-secondary'>
-          <div className='grid gap-2 lg:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
-            {products.map((item, index) => (
-              <Card
-                key={index}
-                className='flex-grow min-h-[340px] flex flex-col justify-between hover:scale-110 duration-300 ease-linear hover:z-10'
-              >
-                <Link href={`/products/${item.id}`} className='contents'>
-                  <CardContent className='relative h-full min-h-48 w-full'>
-                    <Image
-                      src={item.images[2]}
-                      alt={item.title}
-                      fill
-                      className='object-cover'
-                    />
-                  </CardContent>
-                  <CardHeader className='flex flex-col justify-around flex-grow h-full'>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription>
-                      {item.description.slice(0, 128)}
-                    </CardDescription>
-                  </CardHeader>
-                </Link>
-                <CardFooter>
-                  <div className='w-full flex flex-col items-center justify-between'>
-                    <div className='w-full text-center px-4'>
-                      <span className='w-full text-start text-gray-600'>
-                        {item.cost}
-                      </span>
-                    </div>
-                    <div className='w-full gap-4 flex items-center justify-center text-3xl'>
-                      <span className='text-yellow-500 hover:shadow-yellow-500 hover:shadow-lg'>
-                        <CiShoppingCart />
-                      </span>
-                      <span className='text-red-500'>
-                        <CiHeart />
-                      </span>
-                    </div>
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+          <GridCards items={products} />
         </div>
       </div>
       <div className='bg-secondary w-full mb-2'>
