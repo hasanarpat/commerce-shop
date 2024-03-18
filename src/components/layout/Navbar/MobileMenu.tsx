@@ -14,6 +14,7 @@ import {
   NavigationMenuViewport,
 } from '@/components/ui/navigation-menu';
 import Switch from './Switch';
+import Searchbar from './Searchbar';
 const MobileMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -29,18 +30,21 @@ const MobileMenu = () => {
       </div>
       {openMenu && (
         <div className='absolute z-50 w-[100svw] h-[calc(100svh-64px)] top-10 right-[-32px] bg-transparent backdrop-blur-2xl'>
-          <ul
-            className='p-12 h-full flex flex-col justify-between gap-y-4'
-            onClick={() => setOpenMenu((prev) => false)}
-          >
-            <li className='hover:bg-secondary-foreground hover:text-secondary flex flex-col items-center justify-center bg-secondary p-3 rounded-lg gap-1'>
+          <ul className='p-12 h-full flex flex-col justify-between gap-y-4'>
+            <li
+              className='hover:bg-secondary-foreground hover:text-secondary flex flex-col items-center justify-center bg-secondary p-3 rounded-lg gap-1'
+              onClick={() => setOpenMenu((prev) => false)}
+            >
               Theme
               <Switch
                 className='w-full h-8 rounded-full'
                 classNameBall='w-1/2 h-8'
               />
             </li>
-            <li className=' bg-secondary text-lg text-center flex flex-col gap-y-2 rounded-lg'>
+            <li
+              className=' bg-secondary text-lg text-center flex flex-col gap-y-2 rounded-lg'
+              onClick={() => setOpenMenu((prev) => false)}
+            >
               <Link
                 className='hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg'
                 href='/categories'
@@ -61,9 +65,12 @@ const MobileMenu = () => {
               </Link>
             </li>
             <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-lg text-center rounded-lg'>
-              Search
+              <Searchbar />
             </li>
-            <li className=' bg-secondary p-2 text-center rounded-lg flex flex-col items-center gap-2'>
+            <li
+              className=' bg-secondary p-2 text-center rounded-lg flex flex-col items-center gap-2'
+              onClick={() => setOpenMenu((prev) => false)}
+            >
               <Link
                 className='w-full hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg text-xl flex items-center justify-center'
                 href='/favorites'

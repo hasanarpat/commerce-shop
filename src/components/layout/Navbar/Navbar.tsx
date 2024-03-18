@@ -8,6 +8,7 @@ import { GiMetalHand } from 'react-icons/gi';
 import Switch from './Switch';
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
+import Searchbar from './Searchbar';
 
 const Navbar = () => {
   return (
@@ -17,7 +18,9 @@ const Navbar = () => {
           <GiMetalHand />
           <h1 className='text-3xl font-bold text-foreground'>HardStone</h1>
         </Link>
-        <div className='hidden lg:flex'>Search</div>
+        <div className='hidden lg:flex'>
+          <Searchbar />
+        </div>
         <div className='items-center gap-4 hidden md:flex'>
           <Menu />
         </div>
