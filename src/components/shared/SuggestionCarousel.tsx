@@ -75,14 +75,14 @@ const SuggestionCarousel = (props: {
                           className='object-cover'
                         />
 
-                        <div className='absolute text-xs md:text-base bottom-0 top-0 left-0 right-0 w-full text-emerald-300'>
+                        <div className='absolute text-xs md:text-base bottom-0 top-[3rem] left-0 right-0 w-full lg:top-1/3 text-emerald-300'>
                           <CardHeader className='flex flex-col gap-4'>
                             <CardTitle>{item.title}</CardTitle>
                             <CardDescription className='text-emerald-100 mb-2 hidden md:block'>
                               {item.description}
                             </CardDescription>{' '}
                             <Button className='w-fit'>
-                              <Link href={item.url}>See more</Link>
+                              <Link href={item.url}>Daha fazla</Link>
                             </Button>
                           </CardHeader>
                         </div>

@@ -1,7 +1,7 @@
 export const array1 = [
   {
     id: 1,
-    title: 'Bags',
+    title: 'Çantalar',
     description:
       'Nisi aute ad deserunt adipisicing et laboris pariatur aliquip. Ipsum aliqua fugiat proident nostrud fugiat sint consequat incididunt incididunt sint irure sunt. Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/bags',
@@ -9,7 +9,7 @@ export const array1 = [
   },
   {
     id: 2,
-    title: 'Glasses & Sunglasses',
+    title: 'Numaralı ve Güneş Gözlükleri',
     description:
       'Nisi aute ad deserunt adipisicing et laboris pariatur aliquip. Ipsum aliqua fugiat proident nostrud fugiat sint consequat incididunt incididunt sint irure sunt. Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/glasses',
@@ -17,7 +17,7 @@ export const array1 = [
   },
   {
     id: 3,
-    title: 'Sport',
+    title: 'Spora Teşvik',
     description:
       'Nisi aute ad deserunt adipisicing et laboris pariatur aliquip. Ipsum aliqua fugiat proident nostrud fugiat sint consequat incididunt incididunt sint irure sunt. Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/sport',
