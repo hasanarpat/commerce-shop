@@ -15,7 +15,7 @@ import { TProduct } from '@/types';
 
 const GridCards = (props: { items: TProduct[] }) => {
   return (
-    <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6 gap-2 lg:gap-4 p-8 md:p-0'>
+    <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-2 lg:gap-4 p-8 md:p-0'>
       {props.items.map((item: TProduct, index) => (
         <Card
           key={index}

@@ -37,6 +37,7 @@ import GridCards from '@/components/shared/GridCards';
 
 const CategoryProducts = ({ params }: { params: { id: string } }) => {
   const { id } = params;
+
   return (
     <main className=''>
       <div className='flex flex-col md:flex-row p-2 md:p-8 lg:p-12 xl:p-20 lg:pb-6 relative '>

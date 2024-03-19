@@ -174,7 +174,7 @@ export const products = [
     gender: 'male',
   },
   {
-    id: '13',
+    id: '1833',
     title: 'Bracelet',
     description: 'Şık ve sade bileklik',
     images: [
