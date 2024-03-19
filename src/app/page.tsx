@@ -28,6 +28,27 @@ export default function Home() {
       <section className='p-4 lg:px-24'>
         {/* SLIDERS */}
         <ProductCarousel array={array3} isProduct={true} title='Trend' />
+
+        <Hero
+          image='https://images.pexels.com/photos/211047/pexels-photo-211047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          logo='/assets/images/wolverine-logo.svg'
+          title='WOLVERINE'
+          text1='%100 DERİ'
+          text2='STANFORD BOTLARDA SON FIRSATLAR'
+          text3='TEK FİYAT'
+          text4='799'
+          isProduct={true}
+        />
+
+        <Hero
+          image='https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          logo='/assets/images/ns-02.svg'
+          title='NORTH SAILS'
+          text1=''
+          text2=''
+          text3='BORN FROM'
+          text4='OCEAN'
+        />
         {/* OFFERS SECTION */}
         <div className='w-full p-2 md:p-4 lg:px-24 grid'>
           <div
@@ -59,25 +80,6 @@ export default function Home() {
           </div>
         </div>
 
-        <Hero
-          image='https://images.pexels.com/photos/211047/pexels-photo-211047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          logo='/assets/images/wolverine-logo.svg'
-          title='WOLVERINE'
-          text1='%100 DERİ'
-          text2='STANFORD BOTLARDA SON FIRSATLAR'
-          text3='TEK FİYAT'
-          text4='799'
-          isProduct={true}
-        />
-        <Hero
-          image='https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          logo='/assets/images/ns-02.svg'
-          title='NORTH SAILS'
-          text1=''
-          text2=''
-          text3='BORN FROM'
-          text4='OCEAN'
-        />
         <Hero
           image='https://images.pexels.com/photos/999034/pexels-photo-999034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
           logo='/assets/images/hd-56.svg'
