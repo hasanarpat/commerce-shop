@@ -31,7 +31,7 @@ const SearchResultsPage = (searchParams: {
   return (
     <div className='p-2 md:p-4 lg:p-12 xl:px-16'>
       <div className='flex flex-col items-start gap-4 lg:gap-8 justify-center'>
-        <div className='md:w-1/3 lg:w-1/2 w-full mx-auto flex flex-col justify-center gap-4 md:flex-row'>
+        <div className='md:w-1/3 lg:w-1/2 w-full mx-auto flex flex-col items-center justify-center gap-4 md:flex-row'>
           <Link
             href={{
               pathname: `/search/`,
