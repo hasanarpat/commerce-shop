@@ -39,12 +39,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import { Button } from '@/components/ui/button';
 import { CiHeart } from 'react-icons/ci';
+import { MdThumbDown, MdThumbUp } from 'react-icons/md';
 
 const ProductPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -304,14 +308,243 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
             <AccordionItem value='item-1'>
               <AccordionTrigger>Product Details</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                <div className='bg-secondary p-1'>
+                  <p>
+                    Mavinin eşlik ettiği çiçek desenleri ile yatak odanıza
+                    benzersiz bir zarafet ve ferahlık katacak Amelia Mavi Tek
+                    Kişilik Nevresim Takımı, şıklığı ile de göz kamaştırır.
+                    <div className='my-2'>
+                      %100 pamuk oluşan Amelia Nevresim Takımı’nın içeriğinde
+                      nevresim, çarşaf ve yastık kılıfı bulunmaktadır.
+                    </div>
+                    <div className='my-3'>
+                      Karaca Home Amelia Mavi %100 Pamuk Tek Kişilik Lastikli
+                      Çarşaflı Nevresim Takımı Set İçeriği Nevresim: 160 cm x
+                      220 cm Mavi Yatak Çarşafı: 180 cm x 240 cm (Lastikli)
+                      Yastık Kılıfı : 50 cm x 70 cm (1 Adet)
+                    </div>
+                    <div className='my-1'>
+                      Malzeme: %100 Pamuk Özellikler Çamaşır makinesinde
+                      yıkanabilir. 30 derecede yıkanması tavsiye edilir. Kurutma
+                      makinesi kullanımına uygundur. Kuru temizleme yapılabilir.
+                    </div>
+                  </p>
+                  <Table>
+                    <TableBody className='border border-gray-500 [&>*:nth-child(odd)]:bg-gray-500'>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>Tipi</TableCell>
+                        <TableCell className='p-0'>Tek Kişilik</TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>Çarşaf</TableCell>
+                        <TableCell className='p-0'>Lastikli</TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>tema</TableCell>
+                        <TableCell className='p-0'>
+                          Tek Desenli Nevresim
+                        </TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>
+                          Kumaş Dokuması
+                        </TableCell>
+                        <TableCell className='p-0'>Pamuk</TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>
+                          Yastık Adedi
+                        </TableCell>
+                        <TableCell className='p-0'>! Adet</TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>
+                          Yurt Dışı Satış
+                        </TableCell>
+                        <TableCell className='p-0'>Yok</TableCell>
+                      </TableRow>
+                      <TableRow className='p-0'>
+                        <TableCell className='font-bold p-0'>
+                          Stok Kodu
+                        </TableCell>
+                        <TableCell className='p-0'>BLABLA08134</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
-              <AccordionTrigger>Comments</AccordionTrigger>
+              <AccordionTrigger>Reviews</AccordionTrigger>
               <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
+                <div className='flex flex-col p-1 md:p-2 lg:p-3'>
+                  <span className='mb-2 text-xl'>
+                    Bu ürünle ilgili 104 değerlendirme var.
+                  </span>
+                  <ScrollArea className='flex flex-col gap-2 lg:gap-4 h-[420px] rounded-md border p-2'>
+                    {/* COMMENT ITEM */}
+                    <div className='flex items-start gap-2 md:gap-4'>
+                      <Avatar className='h-16 w-16'>
+                        <AvatarImage
+                          src='https://github.com/shadcn.png'
+                          alt='@shadcn'
+                        />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                      <div className='flex flex-col items-start gap-2'>
+                        <div className='flex items-center gap-2'>
+                          <div className='flex gap-1'>
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                          </div>
+                          <span className='text-muted-foreground text-xs'>
+                            29 Kasım 2022, Salı
+                          </span>
+                        </div>
+                        <div className='bg-secondary flex flex-col gap-2 p-3 rounded-lg'>
+                          <p>
+                            Ürün resimde görüldüğü gibi geldi çok güzel ve şık
+                            Karaca kalitesi yine yanıltmadı 👍
+                          </p>
+                          <hr className='h-[2px] bg-primary' />
+                          <div className='flex items-center justify-start gap-2'>
+                            <span className='text-xs text-muted-foreground'>
+                              Kullanıcı bu ürünü Karaca Home satıcısından aldı.
+                            </span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>Ebatlar 160 x 220 cm</span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>
+                              Renk <b>Mavi</b>
+                            </span>
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-4'>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbUp />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbDown />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Separator className='my-2' />
+                    <div className='flex items-start gap-2 md:gap-4'>
+                      <Avatar className='h-16 w-16'>
+                        <AvatarImage
+                          src='https://github.com/shadcn.png'
+                          alt='@shadcn'
+                        />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                      <div className='flex flex-col items-start gap-2'>
+                        <div className='flex items-center gap-2'>
+                          <div className='flex gap-1'>
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                          </div>
+                          <span className='text-muted-foreground text-xs'>
+                            29 Kasım 2022, Salı
+                          </span>
+                        </div>
+                        <div className='bg-secondary flex flex-col gap-2 p-3 rounded-lg'>
+                          <p>
+                            Ut ea cillum culpa nulla. Eiusmod do incididunt ex
+                            laborum proident duis ex. Quis excepteur id do
+                            adipisicing aliqua non veniam irure sit incididunt
+                            laboris consequat excepteur. Occaecat magna veniam
+                            incididunt esse occaecat ut non quis in veniam
+                            ullamco. Do mollit in nisi do ex anim non.👍
+                          </p>
+                          <hr className='h-[2px] bg-primary' />
+                          <div className='flex items-center justify-start gap-2'>
+                            <span className='text-xs text-muted-foreground'>
+                              Kullanıcı bu ürünü Karaca Home satıcısından aldı.
+                            </span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>Ebatlar 160 x 220 cm</span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>
+                              Renk <b>Mavi</b>
+                            </span>
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-4'>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbUp />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbDown />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <Separator className='my-2' />
+                    <div className='flex items-start gap-2 md:gap-4'>
+                      <Avatar className='h-16 w-16'>
+                        <AvatarImage
+                          src='https://github.com/shadcn.png'
+                          alt='@shadcn'
+                        />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                      <div className='flex flex-col items-start gap-2'>
+                        <div className='flex items-center gap-2'>
+                          <div className='flex gap-1'>
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                            <div className='star' />
+                          </div>
+                          <span className='text-muted-foreground text-xs'>
+                            29 Kasım 2022, Salı
+                          </span>
+                        </div>
+                        <div className='bg-secondary flex flex-col gap-2 p-3 rounded-lg'>
+                          <p>
+                            Ürün resimde görüldüğü gibi geldi çok güzel ve şık
+                            Karaca kalitesi yine yanıltmadı 👍
+                          </p>
+                          <hr className='h-[2px] bg-primary' />
+                          <div className='flex items-center justify-start gap-2'>
+                            <span className='text-xs text-muted-foreground'>
+                              Kullanıcı bu ürünü Karaca Home satıcısından aldı.
+                            </span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>Ebatlar 160 x 220 cm</span>
+                            <div className='w-1 h-1 rounded-full bg-gray-500' />
+                            <span>
+                              Renk <b>Mavi</b>
+                            </span>
+                          </div>
+                        </div>
+                        <div className='flex items-center gap-4'>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbUp />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                          <div className='flex items-center gap-1 text-2xl'>
+                            <MdThumbDown />
+                            <span className='text-sm font-thin'>0</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollArea>
+                </div>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
