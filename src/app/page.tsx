@@ -9,6 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { array1, array2, array3 } from './data';
@@ -51,32 +53,33 @@ export default function Home() {
         />
         {/* OFFERS SECTION */}
         <div className='w-full p-2 md:p-4 lg:px-24 grid'>
-          <div
-            className='mx-8 flex flex-wrap items-start justify-center gap-x-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2
-          '
-          >
-            {array2.map((item, index) => (
-              <Card
-                key={index}
-                className='flex-grow min-h-[500px] flex flex-col justify-between'
-              >
-                <CardContent className='relative h-full min-h-48 w-full'>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className='object-cover'
-                  />
-                </CardContent>
-                <CardHeader className='flex flex-col justify-between flex-grow h-full'>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                  <Button>
-                    <Link href={item.url}>Go to Offer</Link>
-                  </Button>
-                </CardHeader>
-              </Card>
-            ))}
+          <div className='mx-8 xl:mx-0 flex items-start justify-center gap-2'>
+            <ScrollArea className='w-96 xl:w-1/3 xl:mx-auto whitespace-nowrap rounded-md border'>
+              <div className='flex w-max space-x-4 p-4'>
+                {array2.map((item) => (
+                  <figure key={item.title} className='shrink-0'>
+                    <div className='overflow-hidden rounded-md'>
+                      <Image
+                        src={item.image}
+                        alt={`${item.title}`}
+                        className='aspect-[3/4] h-fit w-fit object-cover'
+                        width={300}
+                        height={400}
+                      />
+                    </div>
+                    <figcaption className='pt-2 text-xs text-muted-foreground'>
+                      <div className='flex flex-col w-full gap-1'>
+                        {item.title}
+                        <Button className='w-fit'>
+                          <Link href={item.url}>Go to Offer</Link>
+                        </Button>
+                      </div>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <ScrollBar orientation='horizontal' />
+            </ScrollArea>
           </div>
         </div>
 
