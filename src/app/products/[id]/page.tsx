@@ -309,7 +309,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               <AccordionTrigger>Product Details</AccordionTrigger>
               <AccordionContent>
                 <div className='bg-secondary p-1'>
-                  <p>
+                  <div>
                     Mavinin eşlik ettiği çiçek desenleri ile yatak odanıza
                     benzersiz bir zarafet ve ferahlık katacak Amelia Mavi Tek
                     Kişilik Nevresim Takımı, şıklığı ile de göz kamaştırır.
@@ -328,7 +328,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
                       yıkanabilir. 30 derecede yıkanması tavsiye edilir. Kurutma
                       makinesi kullanımına uygundur. Kuru temizleme yapılabilir.
                     </div>
-                  </p>
+                  </div>
                   <Table>
                     <TableBody className='border border-gray-500 [&>*:nth-child(odd)]:bg-gray-500'>
                       <TableRow className='p-0'>
@@ -555,7 +555,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-4'>
-              <AccordionTrigger>Question&Answer</AccordionTrigger>
+              <AccordionTrigger>Question & Answer</AccordionTrigger>
               <AccordionContent>
                 Yes. Its animated by default, but you can disable it if you
                 prefer.
