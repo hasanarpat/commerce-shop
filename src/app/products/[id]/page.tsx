@@ -579,7 +579,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
             <TableBody className='border'>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>1</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -641,7 +641,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>3</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -672,7 +672,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>4</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -703,7 +703,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>5</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -734,7 +734,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>6</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -765,7 +765,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>7</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -796,7 +796,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>8</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -827,7 +827,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>9</span>
                 </TableCell>
                 <TableCell>
                   <Image
@@ -858,7 +858,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               </TableRow>
               <TableRow>
                 <TableCell className='font-medium'>
-                  <span className='rounded-full border p-2'>2</span>
+                  <span className='rounded-full border p-2'>10</span>
                 </TableCell>
                 <TableCell>
                   <Image
