@@ -49,9 +49,23 @@ import ProductCarousel from '@/components/shared/ProductCarousel';
 import { Button } from '@/components/ui/button';
 import { CiHeart } from 'react-icons/ci';
 import { MdThumbDown, MdThumbUp } from 'react-icons/md';
+import { cn } from '@/lib/utils';
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
+const colors = ['Red', 'Green', 'Black', 'Gray', 'Dark Blue', 'Cream'];
+
+const ProductPage = ({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
   const { id } = params;
+
+  const { size, color } = searchParams;
+
+  console.log(size, color);
+
   const product = { ...products.filter((item) => item.id === id) };
 
   return (
@@ -242,12 +256,53 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               <p>Sizes:</p>
               <div className='my-2'>
                 <ul className='flex items-center justify-between xl:justify-center gap-2 lg:gap-4 xl:gap-6 2xl:w-1/2 flex-wrap bg-secondary p-1 w-full rounded-2xl'>
-                  {product[0].size.map((size) => (
+                  {product[0].size.map((productSize) => (
                     <li
-                      key={size}
-                      className='cursor-pointer flex-1 text-center text-lg rounded-xl bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary xl:p-1 xl:px-2'
+                      key={productSize}
+                      className={cn(
+                        'cursor-pointer min-w-24 flex-grow text-center text-lg rounded-xl bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary xl:p-1 xl:px-2',
+                        size === productSize.toLowerCase() &&
+                          'bg-emerald-600 text-white'
+                      )}
                     >
-                      {size}
+                      <Link
+                        href={{
+                          pathname: `/products/${id}`,
+                          query: {
+                            size: productSize.toLowerCase(),
+                            color,
+                          },
+                        }}
+                      >
+                        {productSize}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className='my-1 flex flex-col'>
+                <span>Colors:</span>
+                <ul className='flex items-center justify-between xl:justify-center gap-2 lg:gap-4 xl:gap-6 flex-wrap bg-secondary p-1 w-full rounded-2xl'>
+                  {colors.map((itemColor) => (
+                    <li
+                      key={itemColor}
+                      className={cn(
+                        'cursor-pointer min-w-24 flex-grow text-center text-lg rounded-xl bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary xl:p-1 xl:px-2',
+                        color === itemColor.toLowerCase() &&
+                          'bg-emerald-600 text-white'
+                      )}
+                    >
+                      <Link
+                        href={{
+                          pathname: `/products/${id}`,
+                          query: {
+                            size,
+                            color: itemColor.toLowerCase(),
+                          },
+                        }}
+                      >
+                        {itemColor}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -255,25 +310,25 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
               <p className='flex items-center justify-between xl:justify-center gap-2 flex-wrap my-2'>
                 <p className='block w-full'>Categories:</p>
                 <Link
-                  href=''
+                  href={`/categories/${product[0].category}`}
                   className='text-center flex-grow bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg ml-1'
                 >
                   {product[0].category}
                 </Link>
                 <Link
-                  href=''
+                  href={`/categories/metal`}
                   className='text-center flex-grow bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg ml-1'
                 >
                   Metal
                 </Link>
                 <Link
-                  href=''
+                  href={`/categories/fashion`}
                   className='text-center flex-grow bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg ml-1'
                 >
                   Fashion
                 </Link>
                 <Link
-                  href=''
+                  href={`/categories/female`}
                   className='text-center flex-grow bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg ml-1'
                 >
                   Female
@@ -294,7 +349,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
         </div>
-        <div className='w-full mt-12 lg:mt-16 flex gap-2'>
+        <div className='w-full mt-16 lg:mt-36 flex gap-2'>
           <div className='flex-1 items-center justify-center hidden md:flex'></div>
           <div className='flex-1 flex items-center justify-center gap-2 md:gap-4 xl:gap-6'>
             <Button className='flex-grow'>Add to Cart</Button>
