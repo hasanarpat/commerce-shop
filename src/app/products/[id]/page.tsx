@@ -362,7 +362,8 @@ const ProductPage = ({
                 <DialogHeader>
                   <DialogTitle>Share link</DialogTitle>
                   <DialogDescription>
-                    Anyone who has this link will be able to view this.
+                    You can select any size or color and send the exact link to
+                    anyone to view.
                   </DialogDescription>
                 </DialogHeader>
                 <div className='flex items-center space-x-2'>
@@ -372,7 +373,9 @@ const ProductPage = ({
                     </Label>
                     <Input
                       id='link'
-                      defaultValue='https://ui.shadcn.com/docs/installation'
+                      defaultValue={`https://localhost:3000/products/${id}${
+                        size && color && `?size=${size}&color=${color}`
+                      }`}
                       readOnly
                     />
                   </div>
