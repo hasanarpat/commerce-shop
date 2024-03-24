@@ -390,10 +390,7 @@ const ProductPage = ({
                 </DialogFooter>
               </DialogContent>
             </Dialog>
-            <Button
-              variant='secondary'
-              className='flex-grow max-w-48 text-base font-medium'
-            >
+            <Button variant='secondary' className='flex-grow max-w-48'>
               Add to Cart
               <MdAddShoppingCart className='text-2xl ml-3' />
             </Button>
