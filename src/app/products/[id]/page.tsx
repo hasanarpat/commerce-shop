@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/resizable';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -48,8 +49,10 @@ import Link from 'next/link';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import { Button } from '@/components/ui/button';
 import { CiHeart } from 'react-icons/ci';
-import { MdThumbDown, MdThumbUp } from 'react-icons/md';
+import { MdAddShoppingCart, MdThumbDown, MdThumbUp } from 'react-icons/md';
+import { FaHeart } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
+import { CgCopy } from 'react-icons/cg';
 
 const colors = ['Red', 'Green', 'Black', 'Gray', 'Dark Blue', 'Cream'];
 
@@ -349,12 +352,56 @@ const ProductPage = ({
             </div>
           </div>
         </div>
-        <div className='w-full mt-16 lg:mt-36 flex gap-2'>
-          <div className='flex-1 items-center justify-center hidden md:flex'></div>
-          <div className='flex-1 flex items-center justify-center gap-2 md:gap-4 xl:gap-6'>
-            <Button className='flex-grow'>Add to Cart</Button>
-            <Button className='min-w-[72px] xl:w-48'>
-              <CiHeart className='text-3xl fill-red-500 hover:stroke-red-500' />
+        <div className='w-full flex items-center justify-center md:mt-12 lg:mt-36 lg:w-1/2 lg:mx-auto p-2 md:p-4'>
+          <div className='flex-1 flex items-center justify-center gap-2'>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant='secondary'>Share</Button>
+              </DialogTrigger>
+              <DialogContent className='sm:max-w-md'>
+                <DialogHeader>
+                  <DialogTitle>Share link</DialogTitle>
+                  <DialogDescription>
+                    Anyone who has this link will be able to view this.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className='flex items-center space-x-2'>
+                  <div className='grid flex-1 gap-2'>
+                    <Label htmlFor='link' className='sr-only'>
+                      Link
+                    </Label>
+                    <Input
+                      id='link'
+                      defaultValue='https://ui.shadcn.com/docs/installation'
+                      readOnly
+                    />
+                  </div>
+                  <Button type='submit' size='sm' className='px-3'>
+                    <span className='sr-only'>Copy</span>
+                    <CgCopy className='h-4 w-4' />
+                  </Button>
+                </div>
+                <DialogFooter className='sm:justify-start'>
+                  <DialogClose asChild>
+                    <Button type='button' variant='secondary'>
+                      Close
+                    </Button>
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+            <Button
+              variant='secondary'
+              className='flex-grow max-w-48 text-base font-medium'
+            >
+              Add to Cart
+              <MdAddShoppingCart className='text-2xl ml-3' />
+            </Button>
+            <Button variant='secondary' className='min-w-[72px] xl:w-32'>
+              <span className='text-3xl text-red-500 group transition-all duration-100 ease-linear'>
+                <CiHeart className='fill-red-500 stroke-red-500 group-hover:hidden' />
+                <FaHeart className='hidden group-hover:block' />
+              </span>
             </Button>
           </div>
         </div>
