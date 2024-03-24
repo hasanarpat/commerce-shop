@@ -86,7 +86,7 @@ const ProductPage = ({
   return (
     <div className='p-2 md:p-4 lg:p-10 xl:px-16'>
       <div className='w-full flex flex-col gap-2 lg:gap-6'>
-        <div className='w-full flex flex-col md:flex-row gap-2 lg:gap-4 h-[720px] md:h-[360px] xl:w-[70%] xl:mx-auto'>
+        <div className='w-full flex flex-col md:flex-row gap-2 lg:gap-4 h-[720px] md:h-[360px] lg:h-[480px] xl:w-[70%] xl:mx-auto'>
           <div className='flex-1 bg-secondary rounded'>
             <ResizablePanelGroup
               direction='horizontal'
@@ -357,14 +357,11 @@ const ProductPage = ({
                   </span>
                 </div>
               )}
-              <p>Gender:</p>
-              <p className='my-1 bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg w-fit'>
-                {product[0].gender}
-              </p>
+              <p>Gender: {product[0].gender.toUpperCase()}</p>
             </div>
           </div>
         </div>
-        <div className='w-full flex items-center justify-center md:mt-12 lg:mt-36 lg:w-1/2 lg:mx-auto p-2 md:p-4'>
+        <div className='w-full flex items-center justify-center md:mt-12 lg:mt-0 lg:w-1/2 lg:mx-auto p-2 md:p-4'>
           <div className='flex-1 flex items-center justify-center gap-2'>
             <Dialog>
               <DialogTrigger asChild>
