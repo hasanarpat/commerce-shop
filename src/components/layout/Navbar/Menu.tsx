@@ -86,12 +86,14 @@ const Menu = () => {
                 <NavigationMenuLink asChild>
                   <a
                     className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-                    href='/bands'
+                    href='/trends'
                   >
                     <div className='text-5xl'>
                       <GiMetalHand />
                     </div>
-                    <div className='mb-2 mt-4 text-lg font-medium'>Bands</div>
+                    <div className='mb-2 mt-4 text-lg font-medium'>
+                      Trends - Bands
+                    </div>
                     <p className='text-sm leading-tight text-muted-foreground'>
                       Find every band and related items here...
                     </p>
