@@ -32,7 +32,7 @@ export const array2 = [
       'Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/bags',
     image:
-      'https://images.pexels.com/photos/1144834/pexels-photo-1144834.jpeg?auto=compress&cs=tinysrgb&w=300',
+      'https://images.unsplash.com/photo-1633896240453-8fb3355c986f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const array2 = [
       'Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/casual',
     image:
-      'https://images.pexels.com/photos/2229490/pexels-photo-2229490.jpeg?auto=compress&cs=tinysrgb&w=300',
+      'https://images.unsplash.com/photo-1654512541705-4652c8649eb2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ export const array2 = [
       'Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/shoes',
     image:
-      'https://images.pexels.com/photos/949590/pexels-photo-949590.jpeg?auto=compress&cs=tinysrgb&w=300',
+      'https://images.unsplash.com/photo-1654011794021-40b54388c347?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ export const array2 = [
       'Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/gentleman',
     image:
-      'https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg?auto=compress&cs=tinysrgb&w=300',
+      'https://images.unsplash.com/photo-1651912965123-b5d8a6fbd497?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ export const array2 = [
       'Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
     url: '/categories/dresses',
     image:
-      'https://images.pexels.com/photos/1135531/pexels-photo-1135531.jpeg?auto=compress&cs=tinysrgb&w=300',
+      'https://images.unsplash.com/photo-1649598295133-7d7837cf7b0b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 export const array3 = [

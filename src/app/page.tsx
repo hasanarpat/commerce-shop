@@ -52,9 +52,9 @@ export default function Home() {
           text4='OCEAN'
         />
         {/* OFFERS SECTION */}
-        <div className='w-full p-2 md:p-4 lg:px-24 grid'>
-          <div className='mx-8 xl:mx-0 flex items-start justify-center gap-2'>
-            <ScrollArea className='w-96 xl:w-1/3 xl:mx-auto whitespace-nowrap rounded-md border'>
+        <div className='w-full p-2 md:p-4 lg:px-24'>
+          <div className='flex items-start justify-center gap-2'>
+            <ScrollArea className='min-w-md mx-auto whitespace-nowrap rounded-md border'>
               <div className='flex w-max space-x-4 p-4'>
                 {array2.map((item) => (
                   <figure key={item.title} className='shrink-0'>
