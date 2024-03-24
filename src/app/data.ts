@@ -1,11 +1,11 @@
 export const array1 = [
   {
     id: 1,
-    title: 'Çantalar',
+    title: 'Shoes',
     description:
       'Nisi aute ad deserunt adipisicing et laboris pariatur aliquip. Ipsum aliqua fugiat proident nostrud fugiat sint consequat incididunt incididunt sint irure sunt. Consectetur adipisicing occaecat aliquip voluptate consequat nostrud labore sit do laboris aliqua proident.',
-    url: '/categories/bags',
-    img: 'https://images.pexels.com/photos/1144834/pexels-photo-1144834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    url: '/categories/shoes',
+    img: 'https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 2,
