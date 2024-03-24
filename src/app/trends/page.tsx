@@ -44,14 +44,14 @@ const Trends = () => {
         <p className='text-2xl mb-2 font-bold'>Trends</p>
 
         <Hero
-          image='https://images.pexels.com/photos/211047/pexels-photo-211047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          image='https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           logo='/assets/images/wolverine-logo.svg'
           title='WOLVERINE'
-          text1='%100 DERİ'
-          text2='STANFORD BOTLARDA SON FIRSATLAR'
-          text3='TEK FİYAT'
-          text4='799'
-          isProduct={true}
+          text1='WOLVERINDE'
+          text2='TREND SEZON ÜRÜNLERİ'
+          text3='SEZON İNDİRİMLERİ'
+          text4='20%'
+          isProduct={false}
         />
 
         <ScrollArea className='max-w-md md:max-w-4xl lg:max-w-7xl whitespace-nowrap rounded-md border mx-auto'>
