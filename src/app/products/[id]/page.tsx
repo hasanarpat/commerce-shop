@@ -813,7 +813,7 @@ const ProductPage = ({
         <div className='w-full my-4'>
           <Table className='caption-top'>
             <TableCaption className='text-emerald-600 text-2xl rounded border border-b-0'>
-              Most Sellers in this category.
+              Best Sellers in this category.
             </TableCaption>
             <TableBody className='border'>
               <TableRow>
