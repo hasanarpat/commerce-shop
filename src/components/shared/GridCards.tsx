@@ -17,11 +17,11 @@ import { Button } from '../ui/button';
 
 const GridCards = (props: { items: TProduct[] }) => {
   return (
-    <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-2 lg:gap-4 p-8 md:p-0'>
+    <div className='w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-4 p-8 md:p-0'>
       {props.items.map((item: TProduct, index) => (
         <Card
           key={index}
-          className='flex-grow min-h-[340px] flex flex-col justify-between hover:scale-110 duration-300 ease-linear hover:z-10'
+          className='flex-grow min-h-[340px] flex flex-col justify-between hover:drop-shadow-xl duration-300 ease-linear hover:z-10 group'
         >
           <Link href={`/products/${item.id}`} className='contents'>
             <CardContent className='relative h-full min-h-48 w-full'>
@@ -41,28 +41,40 @@ const GridCards = (props: { items: TProduct[] }) => {
               </CardDescription>
             </CardHeader>
           </Link>
-          <CardFooter>
+          <CardFooter className='p-0'>
             <div className='w-full flex flex-col items-center justify-between'>
               <div className='w-full text-center px-4'>
                 <span className='w-full text-start text-gray-600'>
                   {item.cost}
                 </span>
               </div>
-              <div className='w-full gap-4 flex items-center justify-center text-3xl'>
-                <span className='text-yellow-500 hover:shadow-yellow-500 group'>
-                  <Button className='group-hover:hidden text-2xl p-0 px-2'>
+              <div className='w-[94%] mx-auto gap-4 group-hover:visible flex items-center justify-center text-3xl invisible my-1 bg-emerald-500 rounded-md transition-all duration-100 ease-in-out'>
+                <span className=' group/basket'>
+                  <Button
+                    variant='link'
+                    className='group-hover/basket:hidden text-2xl p-0 px-2'
+                  >
                     <CiShoppingCart />
                   </Button>
-                  <Button className='hidden group-hover:block text-2xl p-0 px-2'>
-                    <FaCartPlus />
+                  <Button
+                    variant='link'
+                    className='hidden group-hover/basket:block text-2xl p-0 px-2'
+                  >
+                    <FaCartPlus className='text-yellow-500' />
                   </Button>
                 </span>
-                <span className='group'>
-                  <Button className='group-hover:hidden text-2xl p-0 px-2'>
-                    <CiHeart className='fill-red-500 stroke-red-500 group-hover:hidden' />
+                <span className='group/fav'>
+                  <Button
+                    variant='link'
+                    className='group-hover/fav:hidden text-2xl p-0 px-2'
+                  >
+                    <CiHeart />
                   </Button>
-                  <Button className='hidden group-hover:block text-2xl p-0 px-2'>
-                    <FaHeart className='hidden group-hover:block text-red-500' />
+                  <Button
+                    variant='link'
+                    className='hidden group-hover/fav:block text-2xl p-0 px-2'
+                  >
+                    <FaHeart className='text-red-500' />
                   </Button>
                 </span>
               </div>
