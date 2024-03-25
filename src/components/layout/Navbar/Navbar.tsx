@@ -9,6 +9,16 @@ import Switch from './Switch';
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
 import Searchbar from './Searchbar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { MdAccountCircle } from 'react-icons/md';
+import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   return (
@@ -34,9 +44,31 @@ const Navbar = () => {
           <Link href='/cart'>
             <CiShoppingCart />
           </Link>
-          <Link href='/profile'>
-            <CgProfile />
-          </Link>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <MdAccountCircle />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href='/profile'>Profile</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/favorites'>My Favorites</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/orders'>Orders</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/settings'>Settings</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/logout'>Log Out</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         <MobileMenu />
       </div>

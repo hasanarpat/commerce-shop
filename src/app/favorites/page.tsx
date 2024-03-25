@@ -10,6 +10,7 @@ import { RxCaretSort } from 'react-icons/rx';
 import Link from 'next/link';
 import GridCards from '@/components/shared/GridCards';
 import { array3 } from '../data';
+
 const Favorites = () => {
   return (
     <main className='p-4 lg:p-20 lg:py-8'>
