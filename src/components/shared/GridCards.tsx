@@ -12,6 +12,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import { TProduct } from '@/types';
+import { FaCartPlus, FaHeart } from 'react-icons/fa';
+import { Button } from '../ui/button';
 
 const GridCards = (props: { items: TProduct[] }) => {
   return (
@@ -47,11 +49,21 @@ const GridCards = (props: { items: TProduct[] }) => {
                 </span>
               </div>
               <div className='w-full gap-4 flex items-center justify-center text-3xl'>
-                <span className='text-yellow-500 hover:shadow-yellow-500 hover:shadow-lg'>
-                  <CiShoppingCart />
+                <span className='text-yellow-500 hover:shadow-yellow-500 group'>
+                  <Button className='group-hover:hidden text-2xl p-0 px-2'>
+                    <CiShoppingCart />
+                  </Button>
+                  <Button className='hidden group-hover:block text-2xl p-0 px-2'>
+                    <FaCartPlus />
+                  </Button>
                 </span>
-                <span className='text-red-500'>
-                  <CiHeart />
+                <span className='group'>
+                  <Button className='group-hover:hidden text-2xl p-0 px-2'>
+                    <CiHeart className='fill-red-500 stroke-red-500 group-hover:hidden' />
+                  </Button>
+                  <Button className='hidden group-hover:block text-2xl p-0 px-2'>
+                    <FaHeart className='hidden group-hover:block text-red-500' />
+                  </Button>
                 </span>
               </div>
             </div>
