@@ -357,11 +357,11 @@ const ProductPage = ({
                   </span>
                 </div>
               )}
-              <p>Gender: {product[0].gender.toUpperCase()}</p>
+              <p className='mb-1'>Gender: {product[0].gender.toUpperCase()}</p>
             </div>
           </div>
         </div>
-        <div className='w-full flex items-center justify-center md:mt-12 lg:mt-0 lg:w-1/2 lg:mx-auto p-2 md:p-4'>
+        <div className='w-full flex items-center justify-center md:mt-16 lg:mt-0 lg:w-1/2 lg:mx-auto p-2 md:p-4'>
           <div className='flex-1 flex items-center justify-center gap-2'>
             <Dialog>
               <DialogTrigger asChild>
@@ -521,6 +521,7 @@ const ProductPage = ({
                       </Button>
                       <Button>-</Button>
                     </div>
+                    <span className='my-1'>$64,99</span>
                   </div>
                 </div>
                 <SheetFooter className='xl:mt-40'>
