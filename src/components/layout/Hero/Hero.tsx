@@ -19,7 +19,7 @@ const Hero = (props: {
           fill
           className='object-cover aspect-video 2xl:object-center'
         />
-        <div className='w-full bg-transparent h-full flex justify-between absolute z-10'>
+        <div className='w-full bg-transparent h-full flex justify-between absolute z-10 text-white'>
           <div className='w-[40%] flex justify-start p-1'>
             <span className='text-3xl  md:text-5xl xl:text-6xl h-fit font-extrabold'>
               {props.title}
