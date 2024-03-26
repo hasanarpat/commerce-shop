@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { CiHeart, CiLogin, CiShoppingCart } from 'react-icons/ci';
-import { CgProfile } from 'react-icons/cg';
 
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from '@/components/ui/navigation-menu';
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 import Switch from './Switch';
 import Searchbar from './Searchbar';
-import { Button } from '@/components/ui/button';
-import { RiProfileFill } from 'react-icons/ri';
-import { GiCaptainHatProfile } from 'react-icons/gi';
-import { Separator } from '@/components/ui/separator';
-import { MdAccountCircle, MdOutlineLocalShipping } from 'react-icons/md';
-import { FaListCheck } from 'react-icons/fa6';
+import { MdAccountCircle } from 'react-icons/md';
 
 const MobileMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -83,52 +75,45 @@ const MobileMenu = () => {
                 <span className='text-lg'>Cart</span>
                 <CiShoppingCart className=' text-4xl ml-2' />
               </Link>
-              <div className='bg-secondary flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary  w-full md:w-1/2'>
-                <NavigationMenu>
-                  <NavigationMenuList>
-                    <NavigationMenuItem>
-                      <NavigationMenuTrigger className='bg-transparent hover:invisible'>
-                        <MdAccountCircle className='text-3xl' />
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className='flex flex-col min-w-48 gap-2 p-4 px-2'>
-                        <NavigationMenuLink className='text-lg'>
-                          <Link
-                            href='/profile'
-                            className='flex items-center gap-4'
-                          >
-                            John Doe
-                            <MdAccountCircle className='text-xl' />
-                          </Link>
-                        </NavigationMenuLink>
-                        <Separator />
-                        <NavigationMenuLink className='text-lg'>
-                          <Link
-                            href='/favorites'
-                            className='flex items-center gap-4'
-                          >
-                            Favorites
-                            <FaListCheck className='text-xl' />
-                          </Link>
-                        </NavigationMenuLink>
-                        <Separator />
-                        <NavigationMenuLink className='text-lg'>
-                          <Link
-                            href='/orders'
-                            className='flex items-center gap-4'
-                          >
-                            Orders
-                            <MdOutlineLocalShipping className='text-xl' />
-                          </Link>
-                        </NavigationMenuLink>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </div>
-            </li>
-            <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-end mb-8 rounded-lg w-full md:w-1/2 self-center'>
-              <div className='flex gap-x-2 items-center text-md w-full justify-center'>
-                <CiLogin /> <span>Log in</span>
+              <div className='bg-secondary flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary  w-full md:w-1/2 text-4xl'>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <MdAccountCircle />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className='w-[320px] lg:w-auto'>
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <Link href='/profile' className='text-base'>
+                        Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      Cart
+                      <Link href='/cart'>
+                        <CiShoppingCart className='text-2xl' />
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href='/favorites' className='text-base'>
+                        My Favorites
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href='/orders' className='text-base'>
+                        Orders
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href='/settings' className='text-base'>
+                        Settings
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href='/logout'>Log Out</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </li>
             <li
