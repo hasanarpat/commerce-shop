@@ -132,6 +132,8 @@ const Favorites = ({
           <div className='p-4 lg:px-24 2xl:px-64'>
             <GridCards items={array3} />
           </div>
+          {/* Add here infinite scroll */}
+          <h3>Add here infinite scroll</h3>
         </div>
       </div>
     </main>
