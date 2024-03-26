@@ -10,8 +10,14 @@ import { RxCaretSort } from 'react-icons/rx';
 import Link from 'next/link';
 import GridCards from '@/components/shared/GridCards';
 import { array3 } from '../data';
+import { cn } from '@/lib/utils';
 
-const Favorites = () => {
+const Favorites = ({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
+  const { stock, decreased } = searchParams;
   return (
     <main className='p-4 lg:p-20 lg:py-8'>
       <div className='flex gap-4 lg:gap-16'>
@@ -42,7 +48,7 @@ const Favorites = () => {
               201 products
             </span>
             <div className='flex items-center gap-4'>
-              <Button variant='outline'>
+              <Button variant='outline' className='text-2xl'>
                 <IoShareOutline />
               </Button>
             </div>
@@ -69,11 +75,49 @@ const Favorites = () => {
           </div>
           <Separator />
           <div className='flex items-center justify-start gap-2'>
-            <Button className='text-lg font-semibold rounded-sm'>
-              <Link href={{ pathname: '/', query: {} }}>In Stocks</Link>
+            <Button
+              className={cn(
+                'text-lg font-semibold rounded-sm',
+                stock !== undefined &&
+                  stock === 'true' &&
+                  'bg-emerald-500 text-white'
+              )}
+            >
+              <Link
+                href={{
+                  pathname: '/favorites',
+                  query: {
+                    stock:
+                      stock !== undefined && stock === 'true' ? 'false' : true,
+                    decreased: decreased,
+                  },
+                }}
+              >
+                In Stocks
+              </Link>
             </Button>
-            <Button className='text-lg font-semibold rounded-sm'>
-              <Link href={{ pathname: '/', query: {} }}>Costs Decreased</Link>
+            <Button
+              className={cn(
+                'text-lg font-semibold rounded-sm',
+                decreased !== undefined &&
+                  decreased === 'true' &&
+                  'bg-emerald-500 text-white'
+              )}
+            >
+              <Link
+                href={{
+                  pathname: '/favorites',
+                  query: {
+                    stock: stock,
+                    decreased:
+                      decreased !== undefined && decreased === 'true'
+                        ? 'false'
+                        : true,
+                  },
+                }}
+              >
+                Costs Decreased
+              </Link>
             </Button>
             <Button className='text-lg font-semibold rounded-sm'>
               <Link
