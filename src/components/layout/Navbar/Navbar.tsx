@@ -37,14 +37,7 @@ const Navbar = () => {
         <div className='lg:flex hidden'>
           <Switch />
         </div>
-        <div className='text-4xl hidden lg:flex items-center gap-2'>
-          <Link href='/favorites' className='text-red-500'>
-            <CiHeart />
-          </Link>
-          <Link href='/cart'>
-            <CiShoppingCart />
-          </Link>
-
+        <div className='text-4xl hidden lg:block'>
           <DropdownMenu>
             <DropdownMenuTrigger>
               <MdAccountCircle />
@@ -53,16 +46,30 @@ const Navbar = () => {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link href='/profile'>Profile</Link>
+                <Link href='/profile' className='text-base'>
+                  Profile
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href='/favorites'>My Favorites</Link>
+                Cart
+                <Link href='/cart'>
+                  <CiShoppingCart className='text-2xl' />
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href='/orders'>Orders</Link>
+                <Link href='/favorites' className='text-base'>
+                  My Favorites
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href='/settings'>Settings</Link>
+                <Link href='/orders' className='text-base'>
+                  Orders
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href='/settings' className='text-base'>
+                  Settings
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link href='/logout'>Log Out</Link>

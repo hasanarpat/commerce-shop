@@ -16,34 +16,34 @@ import { GiMetalHand } from 'react-icons/gi';
 const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Kasetler',
-    href: '/casettes',
+    href: '/categories/casettes',
     description: 'From 60s to nowadays, casettes of all genres and bands',
   },
   {
     title: 'Aksesuar',
-    href: '/aksesuar',
+    href: '/categories/accessories',
     description:
       'Zincir, deri ve kumaş bileklikler, küpeler, kolyeler ve diğerleri.',
   },
   {
     title: 'Şapkalar',
-    href: '/hats',
+    href: '/categories/hats',
     description: 'Grup şapkaları ve daha fazlası...',
   },
   {
     title: 'Ayakkabı-Postal',
-    href: '/shoes',
+    href: '/categories/shoes',
     description: 'Postal, hard-punk ve kışlık, motorsiklet botları.',
   },
   {
     title: 'Giyim',
-    href: '/mode',
+    href: 'categories//mode',
     description:
       'Her çeşit ve her beden için t-shirt, pantolon, şort, ceket ve daha fazlası...',
   },
   {
     title: 'Müzik Aletleri',
-    href: '/instruments',
+    href: '/categories/instruments',
     description: 'Metal yapmak için gerekli bütün müzik aletleri',
   },
 ];
@@ -100,13 +100,13 @@ const Menu = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href='/t-shirt' title='T-Shirts'>
+              <ListItem href='/categories/t-shirt' title='T-Shirts'>
                 T-shirts of all bands, all sizes and types.
               </ListItem>
-              <ListItem href='/pants' title='Pants'>
+              <ListItem href='/categories/pants' title='Pants'>
                 Pants of all bands, all sizes and types.
               </ListItem>
-              <ListItem href='/jackets' title='Jackets'>
+              <ListItem href='/categories/jackets' title='Jackets'>
                 Hard 70's, 80's, 90's and leather Jackets.
               </ListItem>
             </ul>
