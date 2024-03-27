@@ -43,7 +43,7 @@ const GridCards = (props: { items: TProduct[] }) => {
           </Link>
           <CardFooter className='p-0'>
             <div className='w-full flex flex-col items-center justify-between'>
-              <div className='w-full text-center px-4'>
+              <div className='w-full text-start px-6'>
                 <span className='w-full text-start text-gray-600'>
                   {item.cost}
                 </span>
