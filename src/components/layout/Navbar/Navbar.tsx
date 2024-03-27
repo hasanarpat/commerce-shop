@@ -51,9 +51,9 @@ const Navbar = () => {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                Cart
                 <Link href='/cart'>
-                  <CiShoppingCart className='text-2xl' />
+                  Cart
+                  <CiShoppingCart className='text-2xl inline' />
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>

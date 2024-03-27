@@ -264,7 +264,7 @@ const ProductPage = ({
           </div>
           <div className='flex-1 p-2 lg:px-4 flex flex-col items-start'>
             <div className='flex flex-col w-full'>
-              <h4 className='text-3xl'>{product[0].title}</h4>
+              <h4 className='text-4xl font-semibold'>{product[0].title}</h4>
               <p className='my-1 text-sm text-justify px-2'>
                 {product[0].description}
               </p>
