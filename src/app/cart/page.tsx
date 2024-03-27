@@ -33,18 +33,16 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <div className='flex items-center justify-center'>
+          <div className='flex items-center justify-center bg-slate-400 text-secondary'>
             <p className='p-2 font-bold'>
               My Cart<span className='font-light ml-2'>(1 product)</span>
             </p>
           </div>
           <Separator className='my-1' />
-          <div className='flex items-center justify-start'>
+          <div className='flex items-center justify-start bg-slate-400 text-secondary'>
             <p className='p-2'>
-              <RiCoupon4Fill className='text-3xl text-emerald-500 mr-2 inline' />
-              <span className='text-lg font-base text-emerald-500'>
-                My Coupons
-              </span>
+              <RiCoupon4Fill className='text-3xl mr-2 inline' />
+              <span className='text-lg font-base'>My Coupons</span>
             </p>
           </div>
           <Separator className='my-3' />
