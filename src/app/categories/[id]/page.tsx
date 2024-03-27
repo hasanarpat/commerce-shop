@@ -56,55 +56,55 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
         <div className='flex flex-col md:flex-row w-full  md:w-1/2 mx-auto items-center justify-center gap-8 mt-4'>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Spring Offers
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Best Sellers in {id}
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Outgoing
-          </div>
+          </span>
         </div>
         <h4 className='text-center mt-8 mb-4 text-2xl'>Products in category</h4>
         <div className='flex flex-wrap w-full md:w-2/3 mx-auto items-center justify-center gap-2 gap-y-3'>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Bracelets
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Necklaces
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Perfumes
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Rings
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
-          </div>
-          <div className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          </span>
+          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
-          </div>
+          </span>
         </div>
       </div>
 
-      <div className='my-2  w-full text-center text-3xl font-bold'>
+      <div className='my-2 w-full text-center text-3xl font-semibold text-white'>
         <Link
           href={`/categories/${id}/products`}
           className='bg-emerald-600 px-8 rounded-full'
