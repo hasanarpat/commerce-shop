@@ -117,13 +117,13 @@ const MobileMenu = () => {
               </div>
             </li>
             <li
-              className='hover:bg-secondary-foreground hover:text-secondary flex flex-col items-center justify-center bg-secondary rounded-lg gap-1'
+              className='hover:bg-secondary-foreground hover:text-secondary flex flex-col items-center justify-center bg-secondary rounded-lg gap-1 w-1/2 mx-auto'
               onClick={() => setOpenMenu((prev) => false)}
             >
               Theme
               <Switch
-                className='w-full h-8 rounded-full'
-                classNameBall='w-1/2 h-8'
+                className='w-16 h-8 rounded-full'
+                classNameBall='w-8 h-8'
               />
             </li>
           </ul>
