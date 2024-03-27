@@ -23,7 +23,7 @@ const Searchbar = () => {
             Search for products and categories
           </Button>
         </PopoverTrigger>
-        <PopoverContent className='w-full bg-primary text-primary-foreground border-none p-4 px-6 text-lg'>
+        <PopoverContent className='w-full bg-accent border-none p-4 px-6 text-lg'>
           <div className='grid gap-4 w-96'>
             <form
               action={handleSearchFormSubmit}
