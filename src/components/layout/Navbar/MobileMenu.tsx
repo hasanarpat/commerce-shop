@@ -43,12 +43,6 @@ const MobileMenu = () => {
               </Link>
               <Link
                 className='bg-secondary hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg  w-full md:w-1/2'
-                href='/new'
-              >
-                New
-              </Link>
-              <Link
-                className='bg-secondary hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg  w-full md:w-1/2'
                 href='/trend'
               >
                 Trend
@@ -57,24 +51,7 @@ const MobileMenu = () => {
             <li className='hover:bg-secondary-foreground hover:text-secondary bg-secondary p-2 text-lg text-center rounded-lg  w-full md:w-1/2 self-center'>
               <Searchbar />
             </li>
-            <li
-              className='p-2 text-center rounded-lg flex flex-col items-center gap-2'
-              onClick={() => setOpenMenu((prev) => false)}
-            >
-              <Link
-                className='bg-secondary hover:bg-secondary-foreground hover:text-secondary rounded-lg text-xl flex items-center justify-center  w-full md:w-1/2'
-                href='/favorites'
-              >
-                Favorites
-                <CiHeart className='text-red-500 hover:fill-red-500  text-4xl ml-2' />
-              </Link>
-              <Link
-                href='/cart'
-                className='bg-secondary flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary  w-full md:w-1/2'
-              >
-                <span className='text-lg'>Cart</span>
-                <CiShoppingCart className=' text-4xl ml-2' />
-              </Link>
+            <li className='p-2 text-center rounded-lg flex flex-col items-center gap-2'>
               <div className='bg-secondary flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary  w-full md:w-1/2 text-4xl'>
                 <DropdownMenu>
                   <DropdownMenuTrigger>

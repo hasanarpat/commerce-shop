@@ -2,22 +2,16 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { FaCartShopping } from 'react-icons/fa6';
 import { RiCoupon4Fill } from 'react-icons/ri';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 
 import Link from 'next/link';
 import { FaTruck } from 'react-icons/fa';
 import Image from 'next/image';
-import { Plus, SprayCanIcon, Trash, Trash2 } from 'lucide-react';
+import { Plus, SprayCanIcon, Trash2 } from 'lucide-react';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import { array3 } from '../data';
+import CartReport from '@/components/shared/CartReport';
 
 const Cart = () => {
   const empty = false;
@@ -397,9 +391,7 @@ const Cart = () => {
                       <p className='text-3xl font-semibold'>1.399,99 TL</p>
                     </div>
                     <div className='w-full'>
-                      <Button className='bg-emerald-500 text-white hover:bg-emerald-700 p-6 w-full'>
-                        Finish Shopping
-                      </Button>
+                      <CartReport />
                     </div>
                   </div>
                   <div className='bg-green-200 drop-shadow-lg'>
@@ -425,9 +417,7 @@ const Cart = () => {
                 <p className='text-xl font-semibold'>1.399,99 TL</p>
               </div>
               <div>
-                <Button className='bg-emerald-500 text-white hover:bg-emerald-700 p-6'>
-                  Finish Shopping
-                </Button>
+                <CartReport />
               </div>
             </div>
           </div>
