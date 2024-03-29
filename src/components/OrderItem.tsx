@@ -35,7 +35,7 @@ const OrderItem = ({
     <Accordion
       type='single'
       collapsible
-      className='border border-border rounded-lg p-4 py-1'
+      className='border border-border rounded-lg p-4 py-1 max-w-6xl'
     >
       <AccordionItem value='item-1' className='border-none'>
         <AccordionTrigger>
