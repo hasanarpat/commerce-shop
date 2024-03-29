@@ -197,35 +197,35 @@ const Orders = ({ params }: { params: { id: string } }) => {
           </div>
           <div className='flex items-center gap-6 text-emerald-600'>
             <GoInbox className='text-3xl' />
-            <span className='text-md font-semibold'>Orders</span>
+            <span className='text-sm font-semibold'>Orders</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <IoDiamondOutline className='text-3xl' />
-            <span className='text-md font-semibold'>
+            <span className='text-sm font-semibold'>
               Special Offers For You
             </span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <CiWallet className='text-3xl' />
-            <span className='text-md font-semibold'>HardStonePay</span>
+            <span className='text-sm font-semibold'>HardStonePay</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <TbDeviceImacQuestion className='text-3xl' />
-            <span className='text-md font-semibold'>Questions</span>
+            <span className='text-sm font-semibold'>Questions</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <MdOutlineRateReview className='text-3xl' />
-            <span className='text-md font-semibold'>Reviews</span>
+            <span className='text-sm font-semibold'>Reviews</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <RiCoupon3Line className='text-3xl' />
-            <span className='text-md font-semibold'>Coupons</span>
+            <span className='text-sm font-semibold'>Coupons</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <GrUserSettings className='text-3xl' />
-            <span className='text-md font-semibold'>User Settings</span>
+            <span className='text-sm font-semibold'>User Settings</span>
           </div>
-          <div className='flex flex-col items-start gap-3'>
+          <div className='flex flex-col items-start gap-3 text-sm'>
             <p className='text-gray-400'>
               <Link href='/lists'>My Lists</Link>
             </p>
@@ -239,11 +239,11 @@ const Orders = ({ params }: { params: { id: string } }) => {
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <RiCustomerService2Fill className='text-3xl' />
-            <span className='text-md font-semibold'>Customer Service</span>
+            <span className='text-sm font-semibold'>Customer Service</span>
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <IoLogOutOutline className='text-3xl' />
-            <span className='text-md font-semibold'>Log Out</span>
+            <span className='text-sm font-semibold'>Log Out</span>
           </div>
         </aside>
         <div className='grid gap-6 w-full'>
