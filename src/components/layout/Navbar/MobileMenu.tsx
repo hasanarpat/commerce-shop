@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CiHeart, CiLogin, CiShoppingCart } from 'react-icons/ci';
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 import Switch from './Switch';
 import Searchbar from './Searchbar';
-import { MdAccountCircle } from 'react-icons/md';
+import Dropdown from './Dropdown';
 
 const MobileMenu = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -53,44 +43,7 @@ const MobileMenu = () => {
             </li>
             <li className='p-2 text-center rounded-lg flex flex-col items-center gap-2'>
               <div className='bg-secondary flex items-center justify-center rounded-lg hover:bg-secondary-foreground hover:text-secondary  w-full md:w-1/2 text-4xl'>
-                <DropdownMenu>
-                  <DropdownMenuTrigger>
-                    <MdAccountCircle />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className='w-[320px] lg:w-auto'>
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                      <Link href='/profile' className='text-base'>
-                        Profile
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      Cart
-                      <Link href='/cart'>
-                        <CiShoppingCart className='text-2xl' />
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href='/favorites' className='text-base'>
-                        My Favorites
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href='/orders' className='text-base'>
-                        Orders
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href='/settings' className='text-base'>
-                        Settings
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href='/logout'>Log Out</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <Dropdown />
               </div>
             </li>
             <li

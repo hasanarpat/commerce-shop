@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { MdAccountCircle } from 'react-icons/md';
 import { cn } from '@/lib/utils';
+import Dropdown from './Dropdown';
 
 const Navbar = () => {
   return (
@@ -38,44 +39,7 @@ const Navbar = () => {
           <Switch />
         </div>
         <div className='text-4xl hidden lg:block'>
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <MdAccountCircle />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <Link href='/profile' className='text-base'>
-                  Profile
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href='/cart'>
-                  Cart
-                  <CiShoppingCart className='text-2xl inline' />
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href='/favorites' className='text-base'>
-                  My Favorites
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href='/orders' className='text-base'>
-                  Orders
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href='/settings' className='text-base'>
-                  Settings
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href='/logout'>Log Out</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Dropdown />
         </div>
         <MobileMenu />
       </div>

@@ -393,7 +393,7 @@ const Cart = () => {
                     </div>
                   </div>
                   <div className='bg-green-200 drop-shadow-lg'>
-                    <div className='flex items-center gap-4 p-1'>
+                    <div className='flex items-center gap-4 p-1  text-gray-400'>
                       <SprayCanIcon className='w-32 h-32' />
                       <span className='text-xs font-extralight'>
                         Eu reprehenderit commodo quis non. Anim velit tempor
