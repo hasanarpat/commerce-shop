@@ -9,13 +9,16 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
-import { MdAccountCircle } from 'react-icons/md';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Dropdown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <MdAccountCircle />
+        <Avatar className='w-10 h-10'>
+          <AvatarImage src='https://github.com/shadcn.png' />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-[320px] lg:w-auto'>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
