@@ -11,34 +11,36 @@ import {
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { MinusIcon, PlusIcon } from 'lucide-react';
+
 import Link from 'next/link';
+import { formatPrice } from '@/lib/formatPrice';
+
 const products = [
   {
     title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
+    cost: 139999,
   },
   {
     title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
+    cost: 139999,
   },
   {
     title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
+    cost: 139999,
   },
   {
     title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
-  },
-  ,
-  {
-    title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
+    cost: 139999,
   },
   ,
   {
     title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
-    cost: '1.399,99 TL',
+    cost: 139999,
+  },
+  ,
+  {
+    title: 'Casio AE-1200WHB-3BVDF Erkek Kol Saati',
+    cost: 139999,
   },
 ];
 const CartReport = () => {
@@ -74,7 +76,7 @@ const CartReport = () => {
                             {product.title}
                           </div>
                           <div className='text-[0.90rem] uppercase text-muted-foreground'>
-                            {product.cost}
+                            {formatPrice(product.cost)}
                           </div>
                         </div>
                       </div>
