@@ -29,8 +29,6 @@ const OrderItem = ({
     date: string;
   }[];
 }) => {
-  console.log(products);
-
   return (
     <Accordion
       type='single'
@@ -40,7 +38,7 @@ const OrderItem = ({
       <AccordionItem value='item-1' className='border-none'>
         <AccordionTrigger>
           <div className='flex items-center justify-between w-full'>
-            <div className='flex items-center gap-2 w-[35%]'>
+            <div className='flex items-center justify-between gap-2 w-[35%]'>
               {products.slice(0, 2).map((product, i) => (
                 <div className='w-10 h-10 relative' key={i}>
                   <Image

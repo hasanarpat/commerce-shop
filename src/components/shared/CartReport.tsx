@@ -44,7 +44,6 @@ const products = [
   },
 ];
 const CartReport = () => {
-  const paymentId = 12;
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -92,7 +91,7 @@ const CartReport = () => {
           </div>
           <DrawerFooter>
             <Button>
-              <Link href={`/payment/${paymentId}`}>Submit</Link>
+              <Link href={`/payment`}>Submit</Link>
             </Button>
             <DrawerClose asChild>
               <Button variant='outline'>Cancel</Button>

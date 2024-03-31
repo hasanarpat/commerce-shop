@@ -176,8 +176,7 @@ const orderItems = [
   ],
 ];
 
-const Orders = ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Orders = () => {
   return (
     <main className='md:p-4 min-h-screen'>
       <section className='flex items-start gap-12'>
