@@ -295,7 +295,7 @@ const Payment = () => {
               minim est excepteur laboris.
             </div>
           </div>
-          <div className='hidden lg:block lg:sticky lg:top-24 max-w-[260px] w-full min-h-96 bg-popover mt-2 border border-border'>
+          <div className='hidden lg:block lg:sticky lg:top-24 max-w-[260px] w-full min-h-96 max-h-[500px] bg-popover mt-2 border border-border'>
             <div className='flex flex-col'>
               <div className='flex flex-col gap-4 p-4'>
                 <div className='flex flex-col gap-2'>

@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className='bg-emerald-700 text-emerald-200'>
-      <div className='p-4 md:p-12 flex flex-col items-center  justify-between gap-4 md:flex-row'>
-        <div className='flex flex-col gap-4 w-full items-center md:items-baseline'>
-          <h3 className='text-muted-foreground'>Services</h3>
+    <footer className='bg-accent-foreground text-accent'>
+      <div className='p-4 md:p-12 flex flex-col sm:flex-row flex-wrap items-start justify-between gap-4'>
+        <div className='flex flex-col gap-4 items-start md:items-baseline flex-grow'>
+          <h3 className='text-muted'>Services</h3>
           <menu>
             <li>Branding</li>
             <li>Design</li>
@@ -11,8 +11,8 @@ const Footer = () => {
             <li>Advertisement</li>
           </menu>
         </div>
-        <div className='flex flex-col gap-4 w-full items-center md:items-baseline'>
-          <h3 className='text-muted-foreground'>Company</h3>
+        <div className='flex flex-col gap-4 items-start md:items-baseline flex-grow'>
+          <h3 className='text-muted'>Company</h3>
           <menu>
             <li>About us</li>
             <li>Contact</li>
@@ -20,8 +20,8 @@ const Footer = () => {
             <li>Pres Kit</li>
           </menu>
         </div>
-        <div className='flex flex-col gap-4 w-full items-center md:items-baseline'>
-          <h3 className='text-muted-foreground'>Legal</h3>
+        <div className='flex flex-col gap-4 items-start md:items-baseline flex-grow'>
+          <h3 className='text-muted'>Legal</h3>
           <menu>
             <li>Terms of use</li>
             <li>Privacy Policy</li>
