@@ -38,23 +38,24 @@ const OrderItem = ({
       <AccordionItem value='item-1' className='border-none'>
         <AccordionTrigger>
           <div className='flex items-center justify-between w-full'>
-            <div className='flex items-center justify-between gap-2 w-[35%]'>
-              {products.slice(0, 2).map((product, i) => (
-                <div className='w-10 h-10 relative' key={i}>
-                  <Image
-                    alt=''
-                    src={product.productImg}
-                    fill
-                    className='object-contain border border-border rounded-lg '
-                  />
-                </div>
-              ))}
-              {products.length > 3 && (
-                <div className='w-10 h-10  border border-border rounded-lg bg-gray-400 flex items-center justify-center'>
-                  +{products.length - 2}
-                </div>
-              )}
-
+            <div className='flex items-center justify-between gap-2 w-full max-w-[35%]'>
+              <div className='flex items-center'>
+                {products.slice(0, 2).map((product, i) => (
+                  <div className='w-10 h-10 relative' key={i}>
+                    <Image
+                      alt=''
+                      src={product.productImg}
+                      fill
+                      className='object-contain border border-border rounded-lg '
+                    />
+                  </div>
+                ))}
+                {products.length > 3 && (
+                  <div className='w-10 h-10  border border-border rounded-lg bg-gray-400 flex items-center justify-center'>
+                    +{products.length - 2}
+                  </div>
+                )}
+              </div>
               <div className='text-sm text-gray-400'>
                 Order no:
                 <span className='text-md font-bold ml-2'>402 123 948</span>

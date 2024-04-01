@@ -79,8 +79,6 @@ const ProductPage = ({
 
   const { size, color } = searchParams;
 
-  console.log(size, color);
-
   const product = { ...products.filter((item) => item.id === id) };
 
   return (

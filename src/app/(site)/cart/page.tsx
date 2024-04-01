@@ -10,7 +10,7 @@ import { FaTruck } from 'react-icons/fa';
 import Image from 'next/image';
 import { Plus, SprayCanIcon, Trash2 } from 'lucide-react';
 import ProductCarousel from '@/components/shared/ProductCarousel';
-import { array3 } from '../data';
+import { array3 } from '../../data';
 import CartReport from '@/components/shared/CartReport';
 
 const Cart = () => {
