@@ -10,9 +10,15 @@ import { array1, array2, array3 } from '../data';
 
 import Hero from '@/components/layout/Hero/Hero';
 
+import { auth, UserButton } from '@clerk/nextjs';
+
 export default function Home() {
+  const data = auth();
+  console.log(data);
+
   return (
     <main className=''>
+      <UserButton />
       <section className='p-4 lg:p-12'>
         {/* HERO SECTION */}
         <h1 className=' bg-emerald-500 text-foreground text-3xl text-center p-1'>
