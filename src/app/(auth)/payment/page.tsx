@@ -282,7 +282,6 @@ const Payment = () => {
                 </RadioGroup>
               </div>
             </div>
-
             <div className='bg-gradient-to-r from-purple-500 to-emerald-500 mt-3 drop-shadow-md p-4 lg:p-8 text-sm  text-white'>
               Sint consectetur ut pariatur nulla. Voluptate eu et cillum labore
               ex ullamco veniam cupidatat aliquip consectetur proident dolor

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import ProductCarousel from '@/components/shared/ProductCarousel';
-import { array3 } from '../data';
+import { array3 } from '../../data';
 import Hero from '@/components/layout/Hero/Hero';
 
 export interface Artwork {

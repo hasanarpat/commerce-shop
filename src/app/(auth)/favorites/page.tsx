@@ -9,7 +9,7 @@ import { FaSearch } from 'react-icons/fa';
 import { RxCaretSort } from 'react-icons/rx';
 import Link from 'next/link';
 import GridCards from '@/components/shared/GridCards';
-import { array3 } from '../data';
+import { array3 } from '../../data';
 import { cn } from '@/lib/utils';
 
 const Favorites = ({

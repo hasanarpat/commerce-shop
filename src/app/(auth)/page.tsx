@@ -1,19 +1,13 @@
-import Carousel from '@/components/shared/Carousel';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import SuggestionCarousel from '@/components/shared/SuggestionCarousel';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { array1, array2, array3 } from './data';
+
+import { array1, array2, array3 } from '../data';
+
 import Hero from '@/components/layout/Hero/Hero';
 
 export default function Home() {

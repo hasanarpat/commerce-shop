@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/pagination';
 import { CiHeart, CiShoppingCart } from 'react-icons/ci';
 import GridCards from '@/components/shared/GridCards';
-import { array1, array3 } from '../data';
+import { array1, array3 } from '../../data';
 
 const SearchResultsPage = (searchParams: {
   [key: string]: string | string[] | undefined;
