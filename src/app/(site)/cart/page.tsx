@@ -9,7 +9,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import Link from 'next/link';
 import { FaTruck } from 'react-icons/fa';
 import Image from 'next/image';
-import { Plus, SprayCanIcon, Trash2 } from 'lucide-react';
+import { Minus, Plus, SprayCanIcon, Trash2 } from 'lucide-react';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import { array3 } from '../../data';
 import CartReport from '@/components/shared/CartReport';
@@ -18,7 +18,23 @@ import { CartContext } from '@/context/cart-context';
 import { formatPrice } from '@/lib/formatPrice';
 
 const Cart = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, getCartTotal, removeFromCart, addToCart } =
+    useContext(CartContext);
+
+  const handleCartActions = (
+    item: {
+      id: number;
+      name: string;
+      price: number;
+      quantity: number;
+      img: string;
+      seller: string;
+      predictedDeliveryTime: string;
+    },
+    quantity: string
+  ) => {
+    quantity === 'plus' ? addToCart(item) : removeFromCart(item);
+  };
 
   return (
     <main className='flex flex-col bg-secondary relative'>
@@ -112,17 +128,34 @@ const Cart = () => {
                               <div className='rounded-full border-gray-500 border w-fit mt-'>
                                 <div className='flex items-center p-2 gap-4'>
                                   <Trash2 className='text-emerald-600' />
-                                  <span>1</span>
-                                  <Plus className='text-emerald-600' />
+                                  <div className='flex gap-2 items-center'>
+                                    <Button
+                                      variant='ghost'
+                                      className='p-0 w-6 h-6 rounded-full'
+                                      onClick={() =>
+                                        handleCartActions(item, 'minus')
+                                      }
+                                    >
+                                      <Minus className='text-emerald-500' />
+                                    </Button>
+                                    <span>{item.quantity}</span>
+                                    <Button
+                                      variant='ghost'
+                                      className='p-0 w-6 h-6 rounded-full'
+                                      onClick={() =>
+                                        handleCartActions(item, 'plus')
+                                      }
+                                    >
+                                      <Plus className='text-emerald-600' />
+                                    </Button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div className='flex items-end justify-end'>
-                          <p className='text-lg'>
-                            {formatPrice(item.price)} TL
-                          </p>
+                          <p className='text-lg'>{formatPrice(item.price)}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -155,7 +188,9 @@ const Cart = () => {
                       <p className='text-emerald-500 font-medium'>
                         Selected Products(1)
                       </p>
-                      <p className='text-3xl font-semibold'>1.399,99 TL</p>
+                      <p className='text-3xl font-semibold'>
+                        {formatPrice(getCartTotal())}
+                      </p>
                     </div>
                     <div className='w-full'>
                       <CartReport />
@@ -181,7 +216,9 @@ const Cart = () => {
                 <p className='text-emerald-500 font-medium'>
                   Selected Products(1)
                 </p>
-                <p className='text-xl font-semibold'>1.399,99 TL</p>
+                <p className='text-xl font-semibold'>
+                  {formatPrice(getCartTotal())}
+                </p>
               </div>
               <div>
                 <CartReport />
