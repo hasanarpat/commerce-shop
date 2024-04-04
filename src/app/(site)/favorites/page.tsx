@@ -28,7 +28,7 @@ const Favorites = ({
           >
             <IoArrowBack className='' />
           </Button>
-          <span className='w-full bg-red-500 p-1 px-2 text-xl rounded-r-3xl select-none'>
+          <span className='w-full bg-red-500 text-white p-1 px-2 text-xl rounded-r-3xl select-none'>
             My Favorites
           </span>
         </div>

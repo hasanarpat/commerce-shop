@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -9,21 +10,31 @@ import {
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useDebouncedValue } from '@/lib/debounce';
 
 const Searchbar = () => {
   const handleSearchFormSubmit = (formData: FormData) => {
     const keytoSearch = formData.get('search-item');
     redirect(`/search/?item=${keytoSearch}`);
   };
+
+  const [searchValue, setSearchValue] = useState('');
+
+  const debouncedValue = useDebouncedValue(searchValue, 250);
+  useEffect(() => {
+    // console.log('debounced value', debouncedValue);
+  }, [debouncedValue]);
+
   return (
-    <div className='p-1 bg-secondary rounded-lg'>
+    <div className='p-1 bg-muted rounded-lg'>
       <Popover>
         <PopoverTrigger asChild>
-          <Button className='w-full bg-transparent text-primary hover:text-secondary'>
+          <Button className='w-full bg-transparent text-primary hover:text-muted-foreground hover:bg-muted'>
             Search for products and categories
           </Button>
         </PopoverTrigger>
-        <PopoverContent className='w-full bg-accent border-none p-4 px-6 text-lg'>
+        <PopoverContent className='w-full bg-popover border-none p-4 px-6 text-lg'>
           <div className='grid gap-4 w-96'>
             <form
               action={handleSearchFormSubmit}
@@ -37,6 +48,8 @@ const Searchbar = () => {
                   className='col-span-2 h-8 text-black'
                   type='text'
                   placeholder='Punkies'
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
                 />
               </div>
               <div className='flex flex-col items-start gap-4 w-full'>

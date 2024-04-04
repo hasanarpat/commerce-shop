@@ -7,15 +7,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 import Link from 'next/link';
 
 import { SignOutButton, useUser } from '@clerk/nextjs';
 
-import { FaSignOutAlt } from 'react-icons/fa';
 import { CiShoppingCart } from 'react-icons/ci';
+import { IoLogOutOutline } from 'react-icons/io5';
 
 const Dropdown = () => {
   const { user } = useUser();
@@ -63,18 +63,16 @@ const Dropdown = () => {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href='/settings' className='text-base'>
+          <Link href='/profile' className='text-base'>
             Settings
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SignOutButton>
-            <Button
-              className='w-full flex items-center gap-2 font-base text-gray-500'
-              variant='outline'
-            >
-              Sign Out <FaSignOutAlt className='inline text-xl' />
-            </Button>
+            <span className='cursor-pointer text-base flex gap-2 items-center text-gray-600'>
+              Sign Out
+              <IoLogOutOutline className='text-3xl' />
+            </span>
           </SignOutButton>
         </DropdownMenuItem>
       </DropdownMenuContent>

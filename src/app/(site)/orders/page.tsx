@@ -14,6 +14,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
 import OrderItem from '@/components/OrderItem';
+import UserAvatar from '@/components/shared/UserAvatar';
+import { SignOutButton } from '@clerk/nextjs';
 
 const orderItems = [
   [
@@ -182,11 +184,7 @@ const Orders = () => {
       <section className='flex items-start gap-12'>
         <aside className='hidden lg:flex max-w-xs w-full p-6 flex-col items-start gap-4'>
           <div className='flex items-center gap-6'>
-            <Avatar className='w-16 h-16'>
-              <AvatarImage src='https://github.com/shadcn.png' />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <span className='text-xl font-bold'>John Doe</span>
+            <UserAvatar />
           </div>
           <div className=' bg-pink-100 text-black flex items-center px-6 py-4 rounded-lg w-full text-md'>
             <span>
@@ -222,7 +220,9 @@ const Orders = () => {
           </div>
           <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
             <GrUserSettings className='text-3xl' />
-            <span className='text-sm font-semibold'>User Settings</span>
+            <Link href='/profile' className='text-sm font-semibold'>
+              User Settings
+            </Link>
           </div>
           <div className='flex flex-col items-start gap-3 text-sm'>
             <p className='text-gray-400'>
@@ -240,9 +240,13 @@ const Orders = () => {
             <RiCustomerService2Fill className='text-3xl' />
             <span className='text-sm font-semibold'>Customer Service</span>
           </div>
-          <div className='flex items-center gap-6 text-gray-600 hover:text-emerald-600 cursor-pointer'>
-            <IoLogOutOutline className='text-3xl' />
-            <span className='text-sm font-semibold'>Log Out</span>
+          <div className='flex items-center gap-6 text-gray-600 hover:text-gray-900 cursor-pointer'>
+            <SignOutButton>
+              <span className='flex items-center gap-2 text-sm font-semibold'>
+                <IoLogOutOutline className='text-3xl' />
+                Sign Out
+              </span>
+            </SignOutButton>
           </div>
         </aside>
         <div className='grid gap-6 w-full'>

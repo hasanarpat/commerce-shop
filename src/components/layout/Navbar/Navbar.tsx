@@ -1,24 +1,13 @@
 'use client';
 import Link from 'next/link';
 import React from 'react';
-import { CiShoppingCart } from 'react-icons/ci';
-import { CiHeart } from 'react-icons/ci';
-import { CgProfile } from 'react-icons/cg';
+
 import { GiMetalHand } from 'react-icons/gi';
+
 import Switch from './Switch';
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
 import Searchbar from './Searchbar';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { MdAccountCircle } from 'react-icons/md';
-import { cn } from '@/lib/utils';
 import Dropdown from './Dropdown';
 
 const Navbar = () => {
