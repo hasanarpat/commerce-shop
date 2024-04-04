@@ -21,7 +21,7 @@ const GridCards = (props: { items: TProduct[] }) => {
       {props.items.map((item: TProduct, index) => (
         <Card
           key={index}
-          className='flex-grow min-h-[340px] flex flex-col justify-between hover:drop-shadow-xl duration-300 ease-linear hover:z-10 group'
+          className='flex-grow min-h-[440px] flex flex-col justify-between hover:drop-shadow-xl duration-300 ease-linear hover:z-10 group'
         >
           <Link href={`/products/${item.id}`} className='contents'>
             <CardContent className='relative h-full min-h-48 w-full'>
@@ -48,7 +48,7 @@ const GridCards = (props: { items: TProduct[] }) => {
                   {item.cost}
                 </span>
               </div>
-              <div className='w-[94%] mx-auto gap-4 group-hover:visible flex items-center justify-center text-3xl invisible my-1 bg-emerald-500 rounded-md transition-all duration-100 ease-in-out'>
+              <div className='w-[94%] mx-auto gap-4 group-hover:visible flex items-center justify-center text-3xl invisible my-1 bg-emerald-400/90 rounded-md transition-all duration-100 ease-in-out'>
                 <span className=' group/basket'>
                   <Button
                     variant='link'

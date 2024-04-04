@@ -91,7 +91,7 @@ export const array3 = [
     category: 'Cute',
   },
   {
-    id: 1833,
+    id: 183433,
     title: 'Ceket falan',
     description: 'Modern tarzda slim fit erkek pantolon',
     image:
@@ -100,7 +100,7 @@ export const array3 = [
     category: 'jacket',
   },
   {
-    id: 1833,
+    id: 1831653,
     title: 'Gömlek Filan',
     description: 'Modern tarzda slim fit erkek pantolon',
     image:
@@ -109,7 +109,7 @@ export const array3 = [
     category: 'jacket',
   },
   {
-    id: 1833,
+    id: 183163,
     title: 'B&W Cool Photo',
     description: 'Modern tarzda slim fit erkek pantolon',
     image:
@@ -118,7 +118,7 @@ export const array3 = [
     category: 'jacket',
   },
   {
-    id: 1833,
+    id: 1836133,
     title: 'Şehri Hisset',
     description: 'Modern tarzda slim fit erkek pantolon',
     image:
@@ -127,7 +127,7 @@ export const array3 = [
     category: 'jacket',
   },
   {
-    id: 1833,
+    id: 1833161363,
     title: 'Erkek Slim Fit Pantolon',
     description: 'Modern tarzda slim fit erkek pantolon',
     image:

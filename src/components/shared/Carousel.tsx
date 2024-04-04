@@ -1,3 +1,4 @@
+'use client';
 import {
   Card,
   CardContent,
@@ -19,10 +20,11 @@ import { TCarouselSuggestion, TProduct } from '@/types';
 
 import { CiShoppingCart } from 'react-icons/ci';
 import { CiHeart } from 'react-icons/ci';
-import { IoTicketOutline } from 'react-icons/io5';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { CartContext } from '@/context/cart-context';
 
 const CarouselComponent = (props: {
   classNameContainer?: String;
@@ -40,6 +42,20 @@ const CarouselComponent = (props: {
   title?: String;
   isProduct: boolean;
 }) => {
+  const { addToCart } = useContext(CartContext);
+  const handleAddCart = (item: TProduct) => {
+    const saveItem = {
+      id: item.id,
+      name: item.title,
+      price: 12,
+      quantity: 1,
+      img: item.image || 'lala',
+      seller: 'Fashion Store',
+      predictedDeliveryTime: 'Jun 30',
+    };
+
+    addToCart(saveItem);
+  };
   return (
     <div
       className={cn(
@@ -119,7 +135,10 @@ const CarouselComponent = (props: {
                           </span>
                         </div>
                         <div className='w-full mb-2 gap-4 flex items-center justify-center text-3xl'>
-                          <span className='text-yellow-500 hover:stroke-yellow-500'>
+                          <span
+                            className='text-yellow-500 hover:stroke-yellow-500 hover:scale-110'
+                            onClick={() => handleAddCart(item)}
+                          >
                             <CiShoppingCart />
                           </span>
                           <span className='text-red-500'>

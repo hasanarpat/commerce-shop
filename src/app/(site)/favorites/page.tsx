@@ -18,6 +18,7 @@ const Favorites = ({
   searchParams?: { [key: string]: string | string[] | undefined };
 }) => {
   const { stock, decreased } = searchParams;
+
   return (
     <main className='p-4 lg:p-20 lg:py-8'>
       <div className='flex gap-4 lg:gap-16'>

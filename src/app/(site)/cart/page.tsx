@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { FaCartShopping } from 'react-icons/fa6';
@@ -12,12 +13,16 @@ import { Plus, SprayCanIcon, Trash2 } from 'lucide-react';
 import ProductCarousel from '@/components/shared/ProductCarousel';
 import { array3 } from '../../data';
 import CartReport from '@/components/shared/CartReport';
+import { useContext } from 'react';
+import { CartContext } from '@/context/cart-context';
+import { formatPrice } from '@/lib/formatPrice';
 
 const Cart = () => {
-  const empty = false;
+  const { cartItems } = useContext(CartContext);
+
   return (
     <main className='flex flex-col bg-secondary relative'>
-      {empty === true ? (
+      {cartItems.length < 0 ? (
         <div className='flex flex-col gap-8 p-12'>
           {/* EMTYP CART MESSAGE */}
           <div className='flex flex-col items-center gap-4'>
@@ -49,316 +54,80 @@ const Cart = () => {
           <div className='lg:w-[70%] 2xl:w-[80%] lg:mx-auto relative'>
             <div className='flex gap-4'>
               <div className='flex-grow grid grid-cols-1'>
-                <Card className='rounded-none border-l-0 border-r-0 my-2'>
-                  <CardHeader className='border-b-[1px] border-border'>
-                    <CardTitle className='text-sm flex items-center justify-between'>
-                      <span>
-                        Seller:
-                        <Link
-                          href='/sellers/fashion-stone'
-                          className='font-medium ml-2'
-                        >
-                          FashionStone
-                        </Link>
-                      </span>
-                      <span className='text-green-600 font-bold text-sm'>
-                        Free Shipping
-                      </span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex items-end justify-between w-full'>
-                      <div className='flex flex-col gap-2 p-1'>
-                        <p className='text-xs font-extralight'>
-                          <FaTruck className='mr-2 text-lg inline' />
-                          <span>Predicted delivery time is Jun 30</span>
-                        </p>
-                        <div className='flex items-center gap-4'>
-                          <Checkbox
-                            id='item-1'
-                            className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
-                            checked={true}
-                          />
-                          <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
-                            <Image
-                              alt='product'
-                              src='https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9hdHxlbnwwfHwwfHx8MA%3D%3D'
-                              fill
-                              className='object-cover rounded-lg'
+                {cartItems.map((item: any) => (
+                  <Card
+                    className='rounded-none border-l-0 border-r-0 my-2'
+                    key={item.id}
+                  >
+                    <CardHeader className='border-b-[1px] border-border'>
+                      <CardTitle className='text-sm flex items-center justify-between'>
+                        <span>
+                          Seller:
+                          <Link
+                            href='/sellers/fashion-stone'
+                            className='font-medium ml-2'
+                          >
+                            {item.seller}
+                          </Link>
+                        </span>
+                        <span className='text-green-600 font-bold text-sm'>
+                          Free Shipping
+                        </span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className='flex items-end justify-between w-full'>
+                        <div className='flex flex-col gap-2 p-1'>
+                          <p className='text-xs font-extralight'>
+                            <FaTruck className='mr-2 text-lg inline' />
+                            <span>
+                              Predicted delivery time is{' '}
+                              {item.predictedDeliveryTime}
+                            </span>
+                          </p>
+                          <div className='flex items-start gap-4'>
+                            <Checkbox
+                              id='item-1'
+                              className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
+                              checked={true}
                             />
-                          </div>
-                          <div className='flex flex-col gap-6'>
-                            <p>Casio AE-1200WHB-3BVDF Erkek Kol Saati</p>
-                            <Button
-                              className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
-                              size='sm'
-                            >
-                              Buy with Hardstone credit
-                            </Button>
-                            <div className='rounded-full border-gray-500 border w-fit mt-'>
-                              <div className='flex items-center p-2 gap-4'>
-                                <Trash2 className='text-emerald-600' />
-                                <span>1</span>
-                                <Plus className='text-emerald-600' />
+                            <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
+                              <Image
+                                alt='product'
+                                src={item.img}
+                                fill
+                                className='object-cover rounded-lg'
+                              />
+                            </div>
+                            <div className='flex flex-col gap-6'>
+                              <p className='text-xl font-semibold'>
+                                {item.name}
+                              </p>
+                              <Button
+                                className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
+                                size='sm'
+                              >
+                                Buy with Hardstone credit
+                              </Button>
+                              <div className='rounded-full border-gray-500 border w-fit mt-'>
+                                <div className='flex items-center p-2 gap-4'>
+                                  <Trash2 className='text-emerald-600' />
+                                  <span>1</span>
+                                  <Plus className='text-emerald-600' />
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className='flex items-end justify-end'>
-                        <p className='text-lg'>1.399,99 TL</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className='rounded-none border-l-0 border-r-0 my-2'>
-                  <CardHeader className='border-b-[1px] border-border'>
-                    <CardTitle className='text-sm flex items-center justify-between'>
-                      <span>
-                        Seller:
-                        <Link
-                          href='/sellers/fashion-stone'
-                          className='font-medium ml-2'
-                        >
-                          FashionStone
-                        </Link>
-                      </span>
-                      <span className='text-green-600 font-bold text-sm'>
-                        Free Shipping
-                      </span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex items-end justify-between w-full'>
-                      <div className='flex flex-col gap-2 p-1'>
-                        <p className='text-xs font-extralight'>
-                          <FaTruck className='mr-2 text-lg inline' />
-                          <span>Predicted delivery time is Jun 30</span>
-                        </p>
-                        <div className='flex items-center gap-4'>
-                          <Checkbox
-                            id='item-1'
-                            className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
-                            checked={true}
-                          />
-                          <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
-                            <Image
-                              alt='product'
-                              src='https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9hdHxlbnwwfHwwfHx8MA%3D%3D'
-                              fill
-                              className='object-cover rounded-lg'
-                            />
-                          </div>
-                          <div className='flex flex-col gap-6'>
-                            <p>Casio AE-1200WHB-3BVDF Erkek Kol Saati</p>
-                            <Button
-                              className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
-                              size='sm'
-                            >
-                              Buy with Hardstone credit
-                            </Button>
-                            <div className='rounded-full border-gray-500 border w-fit mt-'>
-                              <div className='flex items-center p-2 gap-4'>
-                                <Trash2 className='text-emerald-600' />
-                                <span>1</span>
-                                <Plus className='text-emerald-600' />
-                              </div>
-                            </div>
-                          </div>
+                        <div className='flex items-end justify-end'>
+                          <p className='text-lg'>
+                            {formatPrice(item.price)} TL
+                          </p>
                         </div>
                       </div>
-                      <div className='flex items-end justify-end'>
-                        <p className='text-lg'>1.399,99 TL</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className='rounded-none border-l-0 border-r-0 my-2'>
-                  <CardHeader className='border-b-[1px] border-border'>
-                    <CardTitle className='text-sm flex items-center justify-between'>
-                      <span>
-                        Seller:
-                        <Link
-                          href='/sellers/fashion-stone'
-                          className='font-medium ml-2'
-                        >
-                          FashionStone
-                        </Link>
-                      </span>
-                      <span className='text-green-600 font-bold text-sm'>
-                        Free Shipping
-                      </span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex items-end justify-between w-full'>
-                      <div className='flex flex-col gap-2 p-1'>
-                        <p className='text-xs font-extralight'>
-                          <FaTruck className='mr-2 text-lg inline' />
-                          <span>Predicted delivery time is Jun 30</span>
-                        </p>
-                        <div className='flex items-center gap-4'>
-                          <Checkbox
-                            id='item-1'
-                            className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
-                            checked={true}
-                          />
-                          <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
-                            <Image
-                              alt='product'
-                              src='https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9hdHxlbnwwfHwwfHx8MA%3D%3D'
-                              fill
-                              className='object-cover rounded-lg'
-                            />
-                          </div>
-                          <div className='flex flex-col gap-6'>
-                            <p>Casio AE-1200WHB-3BVDF Erkek Kol Saati</p>
-                            <Button
-                              className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
-                              size='sm'
-                            >
-                              Buy with Hardstone credit
-                            </Button>
-                            <div className='rounded-full border-gray-500 border w-fit mt-'>
-                              <div className='flex items-center p-2 gap-4'>
-                                <Trash2 className='text-emerald-600' />
-                                <span>1</span>
-                                <Plus className='text-emerald-600' />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='flex items-end justify-end'>
-                        <p className='text-lg'>1.399,99 TL</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className='rounded-none border-l-0 border-r-0 my-2'>
-                  <CardHeader className='border-b-[1px] border-border'>
-                    <CardTitle className='text-sm flex items-center justify-between'>
-                      <span>
-                        Seller:
-                        <Link
-                          href='/sellers/fashion-stone'
-                          className='font-medium ml-2'
-                        >
-                          FashionStone
-                        </Link>
-                      </span>
-                      <span className='text-green-600 font-bold text-sm'>
-                        Free Shipping
-                      </span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex items-end justify-between w-full'>
-                      <div className='flex flex-col gap-2 p-1'>
-                        <p className='text-xs font-extralight'>
-                          <FaTruck className='mr-2 text-lg inline' />
-                          <span>Predicted delivery time is Jun 30</span>
-                        </p>
-                        <div className='flex items-center gap-4'>
-                          <Checkbox
-                            id='item-1'
-                            className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
-                            checked={true}
-                          />
-                          <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
-                            <Image
-                              alt='product'
-                              src='https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9hdHxlbnwwfHwwfHx8MA%3D%3D'
-                              fill
-                              className='object-cover rounded-lg'
-                            />
-                          </div>
-                          <div className='flex flex-col gap-6'>
-                            <p>Casio AE-1200WHB-3BVDF Erkek Kol Saati</p>
-                            <Button
-                              className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
-                              size='sm'
-                            >
-                              Buy with Hardstone credit
-                            </Button>
-                            <div className='rounded-full border-gray-500 border w-fit mt-'>
-                              <div className='flex items-center p-2 gap-4'>
-                                <Trash2 className='text-emerald-600' />
-                                <span>1</span>
-                                <Plus className='text-emerald-600' />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='flex items-end justify-end'>
-                        <p className='text-lg'>1.399,99 TL</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className='rounded-none border-l-0 border-r-0 my-2'>
-                  <CardHeader className='border-b-[1px] border-border'>
-                    <CardTitle className='text-sm flex items-center justify-between'>
-                      <span>
-                        Seller:
-                        <Link
-                          href='/sellers/fashion-stone'
-                          className='font-medium ml-2'
-                        >
-                          FashionStone
-                        </Link>
-                      </span>
-                      <span className='text-green-600 font-bold text-sm'>
-                        Free Shipping
-                      </span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex items-end justify-between w-full'>
-                      <div className='flex flex-col gap-2 p-1'>
-                        <p className='text-xs font-extralight'>
-                          <FaTruck className='mr-2 text-lg inline' />
-                          <span>Predicted delivery time is Jun 30</span>
-                        </p>
-                        <div className='flex items-center gap-4'>
-                          <Checkbox
-                            id='item-1'
-                            className='data-[state=checked]:bg-emerald-500 data-[state=checked]:text-white h-6 w-6 border-none'
-                            checked={true}
-                          />
-                          <div className='relative w-36 h-36 lg:w-48 lg:h-48 border-2 border-spacing-2 border-gray-500 rounded-lg'>
-                            <Image
-                              alt='product'
-                              src='https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9hdHxlbnwwfHwwfHx8MA%3D%3D'
-                              fill
-                              className='object-cover rounded-lg'
-                            />
-                          </div>
-                          <div className='flex flex-col gap-6'>
-                            <p>Casio AE-1200WHB-3BVDF Erkek Kol Saati</p>
-                            <Button
-                              className='bg-purple-500 text-white hover:bg-current opacity-50 w-fit text-xs p-0 h-5 rounded-s px-1'
-                              size='sm'
-                            >
-                              Buy with Hardstone credit
-                            </Button>
-                            <div className='rounded-full border-gray-500 border w-fit mt-'>
-                              <div className='flex items-center p-2 gap-4'>
-                                <Trash2 className='text-emerald-600' />
-                                <span>1</span>
-                                <Plus className='text-emerald-600' />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='flex items-end justify-end'>
-                        <p className='text-lg'>1.399,99 TL</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                ))}
                 <div className='w-full bg-background my-10'>
                   <ProductCarousel
                     isProduct={true}
