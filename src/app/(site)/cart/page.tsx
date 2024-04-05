@@ -18,8 +18,13 @@ import { CartContext } from '@/context/cart-context';
 import { formatPrice } from '@/lib/formatPrice';
 
 const Cart = () => {
-  const { cartItems, getCartTotal, removeFromCart, addToCart } =
-    useContext(CartContext);
+  const {
+    cartItems,
+    getCartTotal,
+    removeFromCart,
+    addToCart,
+    removeItemFromCart,
+  } = useContext(CartContext);
 
   const handleCartActions = (
     item: {
@@ -56,12 +61,15 @@ const Cart = () => {
         <>
           <div className='flex items-center justify-center bg-slate-400 text-secondary'>
             <p className='p-2 font-bold'>
-              My Cart<span className='font-light ml-2'>(1 product)</span>
+              My Cart
+              <span className='font-light ml-2'>
+                ({cartItems.length} product)
+              </span>
             </p>
           </div>
-          <Separator className='my-1' />
-          <div className='flex items-center justify-start bg-slate-400 text-secondary'>
-            <p className='p-2'>
+          <Separator />
+          <div className='bg-slate-400 text-secondary'>
+            <p className='p-2 flex items-center'>
               <RiCoupon4Fill className='text-3xl mr-2 inline' />
               <span className='text-lg font-base'>My Coupons</span>
             </p>
@@ -127,7 +135,13 @@ const Cart = () => {
                               </Button>
                               <div className='rounded-full border-gray-500 border w-fit mt-'>
                                 <div className='flex items-center p-2 gap-4'>
-                                  <Trash2 className='text-emerald-600' />
+                                  <Button
+                                    variant='ghost'
+                                    className='p-0 w-6 h-6 rounded-full'
+                                    onClick={() => removeItemFromCart(item)}
+                                  >
+                                    <Trash2 className='text-emerald-600' />
+                                  </Button>
                                   <div className='flex gap-2 items-center'>
                                     <Button
                                       variant='ghost'

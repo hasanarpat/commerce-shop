@@ -14,6 +14,8 @@ import { Button } from '@/components/ui/button';
 
 import Link from 'next/link';
 import { formatPrice } from '@/lib/formatPrice';
+import { useContext } from 'react';
+import { CartContext } from '@/context/cart-context';
 
 const products = [
   {
@@ -44,6 +46,8 @@ const products = [
   },
 ];
 const CartReport = () => {
+  const { cartItems, getCartTotal } = useContext(CartContext);
+
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -64,29 +68,29 @@ const CartReport = () => {
                   <h4 className='mb-4 text-sm font-medium leading-none'>
                     Products
                   </h4>
-                  {products.map((product, i) => (
-                    <>
+                  {cartItems.map((product: any, i) => (
+                    <div className='w-full' key={i}>
                       <div className='flex gap-2'>
                         <span className='border-border border-2 text-xl h-fit p-2 rounded-full '>
-                          {i}
+                          {product.quantity}
                         </span>
                         <div className='flex flex-col'>
                           <div className='text-xl lg:text-2xl font-bold tracking-tighter'>
-                            {product.title}
+                            {product.name}
                           </div>
                           <div className='text-[0.90rem] uppercase text-muted-foreground'>
-                            {formatPrice(product.cost)}
+                            {formatPrice(product.price)}
                           </div>
                         </div>
                       </div>
                       <Separator className='my-2' />
-                    </>
+                    </div>
                   ))}
                 </div>
               </ScrollArea>
             </div>
             <div className='my-3'>
-              <p>Total Cost:4.239,99</p>
+              <p>Total Cost:{formatPrice(getCartTotal())}</p>
             </div>
           </div>
           <DrawerFooter>

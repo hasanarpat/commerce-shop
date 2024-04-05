@@ -16,6 +16,7 @@ interface CartContextType {
   removeFromCart: (item: Item) => void;
   clearCart: () => void;
   getCartTotal: () => number;
+  removeItemFromCart: (item: Item) => void;
 }
 
 export const CartContext = createContext<CartContextType>({
@@ -24,16 +25,18 @@ export const CartContext = createContext<CartContextType>({
   removeFromCart: () => {},
   clearCart: () => {},
   getCartTotal: () => 0,
+  removeItemFromCart: () => {},
 });
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cartItems, setCartItems] = useState<Item[]>(
-    localStorage.getItem('cartItems')
-      ? JSON.parse(localStorage.getItem('cartItems')!)
-      : []
-  );
+  const [cartItems, setCartItems] = useState<Item[]>(() => {
+    if (typeof window !== 'undefined') {
+      return JSON.parse(localStorage.getItem('cartItems')!);
+    }
+    return [];
+  });
 
   const addToCart = (item: Item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
@@ -78,6 +81,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     );
   };
 
+  const removeItemFromCart = (item: Item) => {
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
+    }
+  };
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -101,6 +111,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
         removeFromCart,
         clearCart,
         getCartTotal,
+        removeItemFromCart,
       }}
     >
       {children}
