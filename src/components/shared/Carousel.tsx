@@ -110,15 +110,20 @@ const CarouselComponent = (props: {
                             alt='product'
                             src={item.image}
                             fill
-                            className='object-cover group-hover:object-contain'
+                            className='object-cover group-hover:saturate-200'
                           />
                         )}
                       </Link>
                     </CardContent>
                     <CardHeader
-                      className={cn('p-2 ', props.classNameCardHeader)}
+                      className={cn(
+                        'p-2 flex items-center',
+                        props.classNameCardHeader
+                      )}
                     >
-                      <CardTitle className={cn('', props.classNameCardTitle)}>
+                      <CardTitle
+                        className={cn('mt-4', props.classNameCardTitle)}
+                      >
                         {item.title}
                       </CardTitle>
                       <CardDescription
@@ -128,21 +133,10 @@ const CarouselComponent = (props: {
                       </CardDescription>
                     </CardHeader>
                     <CardFooter className='p-0'>
-                      <div className='w-full flex flex-col items-center justify-between gap-4'>
-                        <div className='w-full flex items-center justify-between px-4'>
-                          <span className='w-full text-start text-emerald-300'>
+                      <div className='w-full '>
+                        <div className='w-full flex items-center justify-center my-1'>
+                          <span className='text-emerald-300 text-lg'>
                             {item.cost}
-                          </span>
-                        </div>
-                        <div className='w-full mb-2 gap-4 flex items-center justify-center text-3xl'>
-                          <span
-                            className='text-yellow-500 hover:stroke-yellow-500 hover:scale-110'
-                            onClick={() => handleAddCart(item)}
-                          >
-                            <CiShoppingCart />
-                          </span>
-                          <span className='text-red-500'>
-                            <CiHeart />
                           </span>
                         </div>
                       </div>

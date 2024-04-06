@@ -24,7 +24,7 @@ const GridCards = (props: { items: TProduct[] }) => {
           className='flex-grow min-h-[440px] flex flex-col justify-between hover:drop-shadow-xl duration-300 ease-linear hover:z-10 group'
         >
           <Link href={`/products/${item.id}`} className='contents'>
-            <CardContent className='relative h-full min-h-48 w-full'>
+            <CardContent className='relative flex-grow h-full min-h-48 w-full'>
               {item.image && (
                 <Image
                   src={item.image}
@@ -34,20 +34,16 @@ const GridCards = (props: { items: TProduct[] }) => {
                 />
               )}
             </CardContent>
-            <CardHeader className='flex flex-col justify-around flex-grow h-full'>
+            <CardHeader className='text-center'>
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>
+              <CardDescription className='text-sm'>
                 {item.description.slice(0, 128)}
               </CardDescription>
             </CardHeader>
           </Link>
           <CardFooter className='p-0'>
-            <div className='w-full flex flex-col items-center justify-between'>
-              <div className='w-full text-start px-6'>
-                <span className='w-full text-start text-gray-600'>
-                  {item.cost}
-                </span>
-              </div>
+            <div className='w-full text-center'>
+              <span className='text-gray-600'>{item.cost}</span>
               <div className='w-[94%] mx-auto gap-4 group-hover:visible flex items-center justify-center text-3xl invisible my-1 bg-emerald-400/90 rounded-md transition-all duration-100 ease-in-out'>
                 <span className=' group/basket'>
                   <Button
@@ -60,7 +56,7 @@ const GridCards = (props: { items: TProduct[] }) => {
                     variant='link'
                     className='hidden group-hover/basket:block text-2xl p-0 px-2'
                   >
-                    <FaCartPlus className='text-yellow-500' />
+                    <FaCartPlus className='text-white' />
                   </Button>
                 </span>
                 <span className='group/fav'>

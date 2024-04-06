@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -152,24 +151,15 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
                           </Link>
                         </CardContent>
                         <CardHeader>
-                          <CardTitle>{item.title}</CardTitle>
-                          <CardDescription>{item.description}</CardDescription>
+                          <CardTitle className='text-center'>
+                            {item.title}
+                          </CardTitle>
                         </CardHeader>
                         <CardFooter className='p-0'>
-                          <div className='w-full flex flex-col items-center justify-between gap-4'>
-                            <div className='w-full flex items-center justify-between px-4'>
-                              <span className='w-full text-start text-emerald-300'>
-                                {item.cost}
-                              </span>
-                            </div>
-                            <div className='w-full mb-2 gap-4 flex items-center justify-center text-3xl'>
-                              <span className='text-yellow-500 hover:stroke-yellow-500'>
-                                <CiShoppingCart />
-                              </span>
-                              <span className='text-red-500'>
-                                <CiHeart />
-                              </span>
-                            </div>
+                          <div className='w-full text-center'>
+                            <span className='text-emerald-300 px-4'>
+                              {item.cost}
+                            </span>
                           </div>
                         </CardFooter>
                       </Card>

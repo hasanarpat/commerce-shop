@@ -43,7 +43,7 @@ const Cart = () => {
 
   return (
     <main className='flex flex-col bg-secondary relative'>
-      {cartItems.length < 0 ? (
+      {cartItems === undefined ? (
         <div className='flex flex-col gap-8 p-12'>
           {/* EMTYP CART MESSAGE */}
           <div className='flex flex-col items-center gap-4'>
