@@ -79,7 +79,24 @@ const ProductPage = ({
 
   const { size, color } = searchParams;
 
-  const product = { ...products.filter((item) => item.id === id) };
+  const product = {
+    id: '1',
+    title: 'Bileklik',
+    description:
+      'Enim eiusmod ea sunt pariatur commodo velit consectetur cupidatat. Elit amet Lorem sint proident. Velit id officia excepteur non id fugiat. Enim adipisicing dolor irure ut velit voluptate. Eiusmod eiusmod laboris dolor excepteur. In labore exercitation adipisicing ullamco adipisicing duis dolor occaecat nisi exercitation officia elit in. Ipsum eiusmod nulla adipisicing qui.',
+    images: [
+      'https://images.pexels.com/photos/553236/pexels-photo-553236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/633661/pexels-photo-633661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/3641056/pexels-photo-3641056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/2442906/pexels-photo-2442906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    ],
+    cost: '$25',
+    category: 'accessories',
+    size: ['sm', 'md', 'lg', 'xl'],
+    isInOffer: false,
+    offer: '',
+    gender: 'male',
+  };
 
   return (
     <div className='p-2 md:p-4 lg:p-10 xl:px-16'>
@@ -262,14 +279,14 @@ const ProductPage = ({
           </div>
           <div className='flex-1 p-2 lg:px-4 flex flex-col items-start'>
             <div className='flex flex-col w-full'>
-              <h4 className='text-4xl font-semibold'>{product[0].title}</h4>
+              <h4 className='text-4xl font-semibold'>{product.title}</h4>
               <p className='my-1 text-sm text-justify px-2'>
-                {product[0].description}
+                {product.description}
               </p>
               <p className='text-lg'>Sizes:</p>
               <div className='my-2'>
                 <ul className='flex items-center justify-between xl:justify-center gap-2 lg:gap-4 xl:gap-6 flex-wrap bg-secondary p-1 md:p-3 lg:px-4 w-full rounded-2xl'>
-                  {product[0].size.map((productSize) => (
+                  {product.size.map((productSize) => (
                     <li
                       key={productSize}
                       className={cn(
@@ -323,10 +340,10 @@ const ProductPage = ({
               <div className='flex items-center justify-between xl:justify-center gap-2 flex-wrap my-2'>
                 <p className='block w-full'>Categories:</p>
                 <Link
-                  href={`/categories/${product[0].category}`}
+                  href={`/categories/${product.category}`}
                   className='text-center flex-grow bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary p-1 px-2 rounded-lg ml-1'
                 >
-                  {product[0].category}
+                  {product.category}
                 </Link>
                 <Link
                   href={`/categories/metal`}
@@ -347,15 +364,15 @@ const ProductPage = ({
                   Female
                 </Link>
               </div>
-              {product[0].isInOffer === true && (
+              {product.isInOffer === true && (
                 <div className='bg-secondary rounded p-1 px-2'>
-                  <p className='text-lg'>Offer:{product[0].offer}</p>
+                  <p className='text-lg'>Offer:{product.offer}</p>
                   <span className='text-xl text-emerald-400'>
                     You have saved $12.23
                   </span>
                 </div>
               )}
-              <p className='mb-1'>Gender: {product[0].gender.toUpperCase()}</p>
+              <p className='mb-1'>Gender: {product.gender.toUpperCase()}</p>
             </div>
           </div>
         </div>
@@ -464,7 +481,7 @@ const ProductPage = ({
                       Color
                     </Label>
                     <ul className='flex items-center justify-center flex-wrap gap-1'>
-                      {product[0].size.map((productSize) => (
+                      {product.size.map((productSize) => (
                         <li
                           key={productSize}
                           className={cn(

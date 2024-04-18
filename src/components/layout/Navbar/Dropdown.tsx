@@ -19,7 +19,6 @@ import { IoLogOutOutline } from 'react-icons/io5';
 
 const Dropdown = () => {
   const { user } = useUser();
-  console.log(user);
 
   return (
     <DropdownMenu>

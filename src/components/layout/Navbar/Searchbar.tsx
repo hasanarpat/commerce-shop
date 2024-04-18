@@ -22,9 +22,7 @@ const Searchbar = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const debouncedValue = useDebouncedValue(searchValue, 250);
-  useEffect(() => {
-    // console.log('debounced value', debouncedValue);
-  }, [debouncedValue]);
+  useEffect(() => {}, [debouncedValue]);
 
   return (
     <div className='p-1 bg-muted rounded-lg'>

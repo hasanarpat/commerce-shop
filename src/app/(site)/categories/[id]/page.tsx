@@ -28,12 +28,12 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
         'w-full p-16 md:p-4 lg:p-20 lg:py-8 flex flex-col items-center justify-center'
       )}
     >
-      <div className='flex flex-col p-4 md:px-8 lg:px-16 xl:px-24 w-full mb-2'>
+      <div className='flex flex-col p-4 pt-0 md:px-8 lg:px-16 xl:px-24 w-full mb-2'>
         <h3 className='text-xl font-bold text-emerald-400 mb-2 text-center'>
           Best of all in {id.toUpperCase()} category.
         </h3>
         <div className='bg-secondary flex flex-col md:flex-row w-full rounded-lg'>
-          <div className='relative flex-1 h-80 w-full'>
+          <div className='relative flex-1 h-96 w-full'>
             <Image
               alt='category hero image'
               src='https://images.pexels.com/photos/3641056/pexels-photo-3641056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
@@ -41,63 +41,66 @@ const SingleCategory = ({ params }: { params: { id: string } }) => {
               className='object-cover'
             />
           </div>
-          <div className='flex-1 h-72 flex flex-col justify-between p-2 md:p-4 text-sm md:text-base box-content'>
-            <h4 className='text-2xl text-sky-400'>
+          <div className='flex-1 h-80 flex flex-col justify-start items-center gap-4 p-2 md:p-4 text-sm md:text-base box-content'>
+            <h4 className='text-2xl'>
               Incididunt laborum et ad tempor eiusmod ipsum.
             </h4>
-            <p>
+            <p className='text-justify'>
               Et reprehenderit anim aute duis occaecat. Lorem ex dolor esse
               ipsum ad cupidatat laboris nisi magna. Dolore nostrud duis
               excepteur exercitation id. Sunt mollit tempor dolore pariatur
+              exercitation. Et reprehenderit anim aute duis occaecat. Lorem ex
+              dolor esse ipsum ad cupidatat laboris nisi magna. Dolore nostrud
+              duis excepteur exercitation id. Sunt mollit tempor dolore pariatur
               exercitation.
             </p>
-            <Button>See Offer</Button>
+            <Button size='lg'>See Offer</Button>
+            <div className='flex flex-col md:flex-row w-full mx-auto items-center justify-center gap-8 mt-4'>
+              <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+                Spring Offers
+              </span>
+              <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+                Best Sellers in {id}
+              </span>
+              <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+                Outgoing
+              </span>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col md:flex-row w-full  md:w-1/2 mx-auto items-center justify-center gap-8 mt-4'>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
-            Spring Offers
-          </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
-            Best Sellers in {id}
-          </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
-            Outgoing
-          </span>
-        </div>
         <h4 className='text-center mt-8 mb-4 text-2xl'>Products in category</h4>
-        <div className='flex flex-wrap w-full md:w-2/3 mx-auto items-center justify-center gap-2 gap-y-3'>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+        <div className='flex flex-wrap w-full md:w-4/5 mx-auto items-center justify-center gap-2 gap-y-3'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Bracelets
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Necklaces
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Perfumes
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Rings
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Crochets
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
           </span>
-          <span className='text-center hover:-translate-y-2 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
+          <span className='text-center hover:scale-110 py-3 px-4 bg-secondary rounded-full cursor-pointer hover:bg-emerald-800 hover:text-emerald-50'>
             Broches
           </span>
         </div>

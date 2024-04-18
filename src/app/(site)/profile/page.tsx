@@ -6,7 +6,7 @@ const Profile = () => {
     <div className='p-8'>
       <UserProfile
         appearance={{
-          // Search for elemeents and integrate site theme for clerk components
+          // Search for elements and integrate site theme for clerk components
           elements: {
             formButtonPrimary:
               'bg-slate-500 hover:bg-slate-400 text-sm normal-case',
