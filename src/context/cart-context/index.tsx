@@ -31,12 +31,9 @@ export const CartContext = createContext<CartContextType>({
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cartItems, setCartItems] = useState<Item[]>(() => {
-    if (typeof window !== 'undefined') {
-      return JSON.parse(localStorage.getItem('cartItems')!);
-    }
-    return [];
-  });
+  const [cartItems, setCartItems] = useState<Item[]>(
+    JSON.parse(localStorage.getItem('cartItems')) || []
+  );
 
   const addToCart = (item: Item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);

@@ -1,5 +1,5 @@
+'use client';
 import React from 'react';
-
 import {
   Card,
   CardContent,
@@ -8,14 +8,35 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import Image from 'next/image';
-import Link from 'next/link';
-import { CiHeart, CiShoppingCart } from 'react-icons/ci';
-import { TProduct } from '@/types';
-import { FaCartPlus, FaHeart } from 'react-icons/fa';
 import { Button } from '../ui/button';
 
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { CiHeart, CiShoppingCart } from 'react-icons/ci';
+import { FaCartPlus, FaHeart } from 'react-icons/fa';
+
+import { TProduct } from '@/types';
+
+import { useContext } from 'react';
+import { CartContext } from '@/context/cart-context';
+
 const GridCards = (props: { items: TProduct[] }) => {
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddCart = (item: TProduct) => {
+    const saveItem = {
+      id: item.id,
+      name: item.title,
+      price: 12,
+      quantity: 1,
+      img: item.image || 'lala',
+      seller: 'Fashion Store',
+      predictedDeliveryTime: 'Jun 30',
+    };
+    addToCart(saveItem);
+  };
+
   return (
     <div className='w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 lg:gap-4 p-8 md:p-0'>
       {props.items.map((item: TProduct, index) => (
@@ -55,6 +76,7 @@ const GridCards = (props: { items: TProduct[] }) => {
                   <Button
                     variant='link'
                     className='hidden group-hover/basket:block text-2xl p-0 px-2'
+                    onClick={() => handleAddCart(item)}
                   >
                     <FaCartPlus className='text-white' />
                   </Button>

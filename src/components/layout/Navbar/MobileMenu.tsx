@@ -33,6 +33,12 @@ const MobileMenu = () => {
               </Link>
               <Link
                 className='bg-secondary hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg  w-full md:w-1/2'
+                href='/cart'
+              >
+                Cart
+              </Link>
+              <Link
+                className='bg-secondary hover:bg-secondary-foreground hover:text-secondary p-2 rounded-lg  w-full md:w-1/2'
                 href='/trend'
               >
                 Trend
