@@ -20,6 +20,7 @@ import { TProduct } from '@/types';
 
 import { useContext } from 'react';
 import { CartContext } from '@/context/cart-context';
+import { FavoriteContext } from '@/context/favorites';
 
 const GridCards = (props: { items: TProduct[] }) => {
   const { addToCart } = useContext(CartContext);
@@ -35,6 +36,25 @@ const GridCards = (props: { items: TProduct[] }) => {
       predictedDeliveryTime: 'Jun 30',
     };
     addToCart(saveItem);
+  };
+
+  const { addToFavorites } = useContext(FavoriteContext);
+  const handleAddFavorites = (item: TProduct) => {
+    console.log(
+      '------------------------------------------------------------------'
+    );
+
+    const saveItem = {
+      id: item.id,
+      name: item.title,
+      price: 12,
+      quantity: 1,
+      img: item.image || 'lala',
+      seller: 'Fashion Store',
+      predictedDeliveryTime: 'Jun 30',
+    };
+
+    addToFavorites(saveItem);
   };
 
   return (
@@ -81,7 +101,10 @@ const GridCards = (props: { items: TProduct[] }) => {
                     <FaCartPlus className='text-white' />
                   </Button>
                 </span>
-                <span className='group/fav'>
+                <span
+                  className='group/fav'
+                  onClick={() => handleAddFavorites(item)}
+                >
                   <Button
                     variant='link'
                     className='group-hover/fav:hidden text-2xl p-0 px-2'

@@ -25,6 +25,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { CartContext } from '@/context/cart-context';
+import { FavoriteContext } from '@/context/favorites';
 
 const CarouselComponent = (props: {
   classNameContainer?: String;
@@ -43,6 +44,7 @@ const CarouselComponent = (props: {
   isProduct: boolean;
 }) => {
   const { addToCart } = useContext(CartContext);
+
   const handleAddCart = (item: TProduct) => {
     const saveItem = {
       id: item.id,

@@ -1,5 +1,3 @@
-// QUANTITIES ARE NOT USED HERE REMOVE THEM AND IF USER ADDS OR REMOOVES AN ITEM JUST ADD IT OR DELTE IT FROM THE LOCALSTRAGE, CHAHNGE FUNCTIONS IF NECESSARY, SOLVE LOCALSTORAGE ERROR FOR NEXTJS
-
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
 interface Item {
@@ -38,19 +36,18 @@ export const FavoriteProvider: React.FC<{ children: ReactNode }> = ({
   );
 
   const addToFavorites = (item: Item) => {
+    console.log('favorites starts working');
+
     const isItemInCart = favoriteItems.find(
       (cartItem) => cartItem.id === item.id
     );
 
-    if (isItemInCart) {
-      setFavoriteItems(
-        favoriteItems.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem } : cartItem
-        )
-      );
-    } else {
+    if (isItemInCart) return;
+    else {
       setFavoriteItems([...favoriteItems, { ...item }]);
     }
+
+    console.log(item, 'item from favorites index');
   };
 
   const removeFromFavorites = (item: Item) => {
@@ -58,17 +55,11 @@ export const FavoriteProvider: React.FC<{ children: ReactNode }> = ({
       (cartItem) => cartItem.id === item.id
     );
 
-    if (isItemInCart && isItemInCart.quantity === 1) {
+    if (isItemInCart) {
       setFavoriteItems(
         favoriteItems.filter((cartItem) => cartItem.id !== item.id)
       );
-    } else {
-      setFavoriteItems(
-        favoriteItems.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem } : cartItem
-        )
-      );
-    }
+    } else return;
   };
 
   const clearFavorites = () => {
@@ -76,10 +67,7 @@ export const FavoriteProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   const getFavoritesTotal = () => {
-    return favoriteItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
+    return favoriteItems.length;
   };
 
   const removeItemFromFavorites = (item: Item) => {
