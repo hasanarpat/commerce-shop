@@ -6,12 +6,7 @@ import ProductCarousel from "@/components/shared/ProductCarousel";
 import { array3 } from "../../data";
 import Hero from "@/components/layout/Hero/Hero";
 
-export interface Artwork {
-  artist: string;
-  art: string;
-}
-
-export const works = [
+const works = [
   {
     artist: "Ornella Binni",
     art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80",
