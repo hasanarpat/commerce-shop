@@ -15,16 +15,20 @@ import {
 import GridCards from "@/components/shared/GridCards";
 import { array3 } from "../../data";
 
-const SearchResultsPage = (searchParams: {
-  [key: string]: string | string[] | undefined;
-}) => {
-  const item = searchParams.searchParams && searchParams.searchParams["item"];
-  const latest =
-    searchParams.searchParams && searchParams.searchParams["latest"];
-  const cheapest =
-    searchParams.searchParams && searchParams.searchParams["cheapest"];
-  const inOffer =
-    searchParams.searchParams && searchParams.searchParams["inOffer"];
+interface SearchParams {
+  searchParams: {
+    item?: string | string[];
+    latest?: string | string[];
+    cheapest?: string | string[];
+    inOffer?: string | string[];
+  };
+}
+
+const SearchResultsPage = ({ searchParams }: SearchParams) => {
+  const item = searchParams && searchParams["item"];
+  const latest = searchParams && searchParams["latest"];
+  const cheapest = searchParams && searchParams["cheapest"];
+  const inOffer = searchParams && searchParams["inOffer"];
 
   return (
     <div className="p-2 md:p-4 lg:p-12 xl:px-16">

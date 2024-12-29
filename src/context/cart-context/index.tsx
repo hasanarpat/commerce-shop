@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, ReactNode } from "react";
 
 interface Item {
   id: number;
@@ -32,7 +32,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [cartItems, setCartItems] = useState<Item[]>(
-    JSON.parse(localStorage.getItem('cartItems')) || []
+    JSON.parse(localStorage.getItem("cartItems"))
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : []
   );
 
   const addToCart = (item: Item) => {
@@ -86,14 +88,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }
   }, [cartItems]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedCartItems = localStorage.getItem('cartItems');
+    if (typeof window !== "undefined") {
+      const storedCartItems = localStorage.getItem("cartItems");
       if (storedCartItems) {
         setCartItems(JSON.parse(storedCartItems));
       }
